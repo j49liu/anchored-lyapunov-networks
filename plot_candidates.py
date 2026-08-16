@@ -16,6 +16,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 from pathlib import Path
 
 import matplotlib
@@ -68,6 +69,16 @@ def sha256(path: Path) -> str:
         for block in iter(lambda: stream.read(1024 * 1024), b""):
             digest.update(block)
     return digest.hexdigest()
+
+
+def reported_level(value: float, significant_digits: int = 4) -> float:
+    """Round a positive level downward to the reported precision."""
+
+    if not math.isfinite(value) or value <= 0.0:
+        raise ValueError("reported levels must be finite and positive")
+    exponent = math.floor(math.log10(value))
+    scale = 10.0 ** (significant_digits - 1 - exponent)
+    return math.floor(value * scale) / scale
 
 
 def configure_style() -> None:
@@ -174,7 +185,7 @@ def draw_level_panel(
     metadata,
     spec,
 ):
-    bounded_level = float(metadata["bounded_level"])
+    bounded_level = reported_level(float(metadata["bounded_level"]))
     heatmap = axis.contourf(
         first_grid,
         second_grid,
@@ -217,7 +228,7 @@ def draw_level_panel(
     axis.set_axisbelow(True)
     axis.legend(
         handles=[Line2D([0], [0], color=ORANGE, linewidth=2.6)],
-        labels=[rf"$W_\theta = {bounded_level:.10g}$"],
+        labels=[rf"$W_\theta = {bounded_level:.4g}$"],
         loc="upper left" if metadata["name"] == "cubic" else "lower left",
         frameon=True,
         framealpha=0.86,
@@ -238,7 +249,7 @@ def draw_surface_panel(
     metadata,
     spec,
 ):
-    bounded_level = float(metadata["bounded_level"])
+    bounded_level = reported_level(float(metadata["bounded_level"]))
     surface = axis.plot_surface(
         first_grid,
         second_grid,
