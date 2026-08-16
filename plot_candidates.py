@@ -217,8 +217,8 @@ def draw_level_panel(
     axis.set_axisbelow(True)
     axis.legend(
         handles=[Line2D([0], [0], color=ORANGE, linewidth=2.6)],
-        labels=["Level set"],
-        loc="lower left",
+        labels=[rf"$W_\theta = {bounded_level:.10g}$"],
+        loc="upper left" if metadata["name"] == "cubic" else "lower left",
         frameon=True,
         framealpha=0.86,
         facecolor="white",
