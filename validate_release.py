@@ -297,8 +297,8 @@ def validate_replayed_screen(manifest: dict):
             near_origin = result["near_origin_log_radial"]
             assert near_origin["points"] == 2**18
             assert near_origin["coverage"] == 1.0
-            assert near_origin["minimum_radius"] == 1e-10
-            assert near_origin["maximum_radius"] == 1.0
+            assert near_origin["minimum_radius"] == 1e-12
+            assert near_origin["maximum_radius"] == 1e-3
             assert near_origin["margin_violations_inside"] == 0
             assert near_origin["strict_violations_inside"] == 0
             assert near_origin["nonfinite_evaluations"] == 0

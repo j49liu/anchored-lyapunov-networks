@@ -174,14 +174,14 @@ def grune_screen(profile, device, batch_size):
         "grune10d",
         model,
         logarithmic_radial_points(
-            near_origin_points, 1e-10, 1.0, 20262114
+            near_origin_points, 1e-12, 1e-3, 20262114
         ),
         device=device,
         batch_size=batch_size,
         margin=0.01,
     )
-    near_origin["minimum_radius"] = 1e-10
-    near_origin["maximum_radius"] = 1.0
+    near_origin["minimum_radius"] = 1e-12
+    near_origin["maximum_radius"] = 1e-3
     near_origin["proposal"] = (
         "Gaussian directions normalized in Euclidean norm; radius uniform on a logarithmic scale"
     )

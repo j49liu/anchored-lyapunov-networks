@@ -424,7 +424,7 @@
   "formula": "H(x)=V_p(x)*exp(gain*(N(x/input_scale)-N(0))); W(x)=tanh(H(x))",
   "release_evidence": {
     "paper_profile_numerical_screen": "evidence/replayed_numerical_screen.json",
-    "paper_profile_numerical_screen_sha256": "bf81618b5a61756810225e91b92f5799b80a8e916635dd6b46c0f942bb62eae7"
+    "paper_profile_numerical_screen_sha256": "31f2479451461460d31c9f2ce795b94c2417d22b0359c6475a1d5fab6c0d78b1"
   },
   "schema": "frozen-anchored-lyapunov-candidates-v1"
 }

@@ -108,7 +108,7 @@ binds every released file.
 
 The paper-profile command replays the reported $2^{20}$-point IID-radial 10D
 screen, a $2^{18}$-point near-origin test with logarithmically sampled radii
-from $10^{-10}$ to $1$, and a $2^{18}$-point sampled-boundary check.  The
+from $10^{-12}$ to $10^{-3}$, and a $2^{18}$-point sampled-boundary check.  The
 larger archived 10D stress-test ledger contains additional populations,
 attacks, and rollouts; it is retained as evidence but is not wholly regenerated
 by this lightweight release.
