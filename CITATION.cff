@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this artifact, please cite the accompanying paper."
+title: "Frozen artifact for Universal Approximation of Maximal Lyapunov Functions with Anchored Neural Networks"
+type: software
+authors:
+  - family-names: Liu
+    given-names: Jun
+license: Apache-2.0
+repository-code: "https://github.com/j49liu/anchored-lyapunov-networks"

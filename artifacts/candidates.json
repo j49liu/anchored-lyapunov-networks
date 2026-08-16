@@ -1,0 +1,430 @@
+{
+  "candidates": {
+    "cubic": {
+      "array_records": {
+        "core_feature_bias": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "2fb7aa6835c53bbaf1c94e55057184ce680e858a4b27c7da4b70d5293df7a207",
+          "shape": [
+            48
+          ]
+        },
+        "core_feature_weight": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "64117b29a55d5e92993c4e097a5709ea7e62e817a5502084760ab5da85555f98",
+          "shape": [
+            48,
+            2
+          ]
+        },
+        "core_output_bias": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "61b5069e320fdef6d9cad9276b6d24af3dc0d5c48490a566bc8b37a85c92f631",
+          "shape": []
+        },
+        "core_output_weight": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "5b76215b7b38b75aa1ab48f41c09f04126f6e4a5da96e3137b91e05cbc4e8670",
+          "shape": [
+            48
+          ]
+        },
+        "correction_bias_0": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "18a5f12025f8d803c29447fa4eaf3f125e3ea0485345a6e33c88634cb21be059",
+          "shape": [
+            32
+          ]
+        },
+        "correction_bias_1": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "584232c6edbb180647db16061b1b54703615a65a35920676661b10d204795ab9",
+          "shape": [
+            32
+          ]
+        },
+        "correction_output_weight": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "5a39745dc69e12777248fea2afba0b30649b48f82f2bf1f2fad60a3208c67a8c",
+          "shape": [
+            1,
+            32
+          ]
+        },
+        "correction_weight_0": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "f1120a584ab56a691a3b55fe420fff331d02fe43fb64c73fb3cb1d54210f81bd",
+          "shape": [
+            32,
+            2
+          ]
+        },
+        "correction_weight_1": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "a08f291e20722921afe0d130db09f7926398bc5680f0f210684388bc12abebdf",
+          "shape": [
+            32,
+            32
+          ]
+        },
+        "input_scale": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "11a95feb52f2f0fbc0cbf5f6223e10f9c1f85e02943c09bbac94e605a83f6fb0",
+          "shape": [
+            2
+          ]
+        }
+      },
+      "bounded_level": 0.04154970550507081,
+      "core_kind": "homogeneous_tanh",
+      "core_margin": 0.12781892644251044,
+      "correction_depth": 2,
+      "correction_gain": 0.65,
+      "correction_width": 32,
+      "dimension": 2,
+      "domain": [
+        [
+          -1.5,
+          1.5
+        ],
+        [
+          -1.5,
+          1.5
+        ]
+      ],
+      "dominant_degree": 3,
+      "evidence": {
+        "historical_formal_proof": "evidence/cubic_formal_proof.json",
+        "historical_formal_proof_sha256": "35cded6bf68c25dcf85762807102aa50f99e8567cb9447126c20d91a891922c2",
+        "historical_local_preflight": "evidence/cubic_local_preflight.json",
+        "historical_local_preflight_sha256": "7a6b517ce1a2fb78dffedc39d6254ccda5ba565bdce4e0cd7a761866bbcbfa08",
+        "gpu_crown_proof": "evidence/cubic_gpu_crown.json",
+        "gpu_crown_proof_sha256": "6726231d9bcd610d85cf1eecb261fa7bf21479cba355a09fa7d7e4ea9e6d24ff",
+        "screen": "evidence/cubic_screen.json",
+        "screen_sha256": "3a5ae1e99af7c4c3dda97af9e0f5ae1d6bc9ea7ff0d2d2b1044823e8539e2542",
+        "standalone_proof": "evidence/cubic_standalone_proof.json",
+        "standalone_proof_sha256": "81984dbd29808efaaaa3a2519d504199283cca6ef94cd47734a97dd5191edc2a"
+      },
+      "evidence_scope": "independent fixed-level screen and complete dReal certificate",
+      "frozen_pytorch_artifact_sha256": "ff82153c8c6237502f7042919f1da03213f523d3657c51fe4241ebe5989d32be",
+      "homogeneous_degree": 2,
+      "independent_coverage": 0.19974231719970703,
+      "latent_level": 0.04157364046865565,
+      "local_radius": 4e-05,
+      "method": "lambda_c=0.2 flow-integral target; LP1 margin then LP2 minimax target fit",
+      "name": "cubic",
+      "outer_margin": 1e-05,
+      "portable_weights": "weights/cubic.npz",
+      "portable_weights_sha256": "7cec2fd5673de4fcec647b623fb9fd287c4459d8cc91a4ce3acb65181fe6b542",
+      "pytorch_weights": "weights/cubic.pt",
+      "pytorch_weights_sha256": "ff82153c8c6237502f7042919f1da03213f523d3657c51fe4241ebe5989d32be",
+      "retained_local_error_bound": 0.08341917337352575
+    },
+    "grune10d": {
+      "array_records": {
+        "core_feature_bias": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "361f54bf88702bb06e1d05992d1b189d351be238f520a7532d8a886d6038ccd5",
+          "shape": [
+            64
+          ]
+        },
+        "core_feature_weight": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "200fb94a182ad094026084456cb2364c9cd68d08632dc50729ac44d603c65a17",
+          "shape": [
+            64,
+            10
+          ]
+        },
+        "core_output_bias": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "44f52f09d301238bf3c578513d8fda82e876f72ceb9949ff8a7e66dc934bc9c3",
+          "shape": []
+        },
+        "core_output_weight": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "201538631fd596313add7ea93b408ba6a17e3983234e130b0deb4a4204468339",
+          "shape": [
+            64
+          ]
+        },
+        "correction_bias_0": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "2febcc21196a120d01ccf04eb82ec6e9f8b8100beac4c328769fba632f9ad58c",
+          "shape": [
+            256
+          ]
+        },
+        "correction_bias_1": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "0dfee732d2c9640f8bb05d0894876ae6947d9c4381c7ed484ad1d50c3b70ce2f",
+          "shape": [
+            256
+          ]
+        },
+        "correction_bias_2": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "0c5e7977f420d7dbc93e2b866510e555e9a9537bc40fc87e4349c01ff79dfc26",
+          "shape": [
+            256
+          ]
+        },
+        "correction_output_weight": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "f75593e7a25e222704ab45e82e9f10b6971a2251953ea27d368252222b99685b",
+          "shape": [
+            1,
+            256
+          ]
+        },
+        "correction_weight_0": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "fe73b3748f26a19fa47d7b1bc4a6dfb71f98876b986b53812b8762c40c7ef91d",
+          "shape": [
+            256,
+            10
+          ]
+        },
+        "correction_weight_1": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "b473ae396405cf7312e4658bc4dc475558286fb8a4856534303c2b0f1ff64f20",
+          "shape": [
+            256,
+            256
+          ]
+        },
+        "correction_weight_2": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "b6ff9adbc406f9166ca8135a4b9057f836657466029b6d56003e5438e9435ea4",
+          "shape": [
+            256,
+            256
+          ]
+        },
+        "input_scale": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "a46f4e610cae21ed2694ee1764d2df2d9521d9166869b53f6e4881308015360b",
+          "shape": [
+            10
+          ]
+        }
+      },
+      "bounded_level": 0.39557787511302517,
+      "core_kind": "homogeneous_tanh",
+      "core_margin": 1.8413040278514257,
+      "core_width": 64,
+      "correction_depth": 3,
+      "correction_gain": 0.75,
+      "correction_width": 256,
+      "dimension": 10,
+      "domain": [
+        [
+          -40.0,
+          40.0
+        ],
+        [
+          -40.0,
+          40.0
+        ],
+        [
+          -40.0,
+          40.0
+        ],
+        [
+          -40.0,
+          40.0
+        ],
+        [
+          -40.0,
+          40.0
+        ],
+        [
+          -40.0,
+          40.0
+        ],
+        [
+          -40.0,
+          40.0
+        ],
+        [
+          -40.0,
+          40.0
+        ],
+        [
+          -40.0,
+          40.0
+        ],
+        [
+          -40.0,
+          40.0
+        ]
+      ],
+      "dominant_degree": 1,
+      "evidence": {
+        "core_synthesis": {
+          "path": "evidence/grune10d_homogeneous_core.json",
+          "sha256": "c7fb5387c5efee18efdcc2c19d17cbe8908259700f7cff527d5b7e879e008966"
+        },
+        "evaluation": {
+          "path": "evidence/grune10d_evaluation.json",
+          "sha256": "7aee5cdfc8101851f5a2a03ef1377fc97430347a054d10eac83087beb4452769"
+        },
+        "protocol": {
+          "path": "evidence/grune10d_evaluation_protocol.json",
+          "sha256": "3f82ef75f0e8c237cdd5b0167a6a6d68567edd272a7a2ba3c621067b206339b7"
+        },
+        "selection": {
+          "path": "evidence/grune10d_frozen_selection.json",
+          "sha256": "d6345a11025f4ecc40fe0f5d8d2a4c2c8c70a1e4058e47b1ae9efeca5e9f6a5b"
+        },
+        "stress": {
+          "path": "evidence/grune10d_tuning_stress.json",
+          "sha256": "48d60070317ba9ea1a157c716e6507b00cde10409e1626dcc2164536348290e1"
+        }
+      },
+      "evidence_scope": "post-selection empirical stress testing; not formal verification",
+      "frozen_pytorch_artifact_sha256": "48f83bbb08aac5c8cc277ca0f69e69442084d50e562fdf2a0cb4028ffe9d6d47",
+      "homogeneous_degree": 2,
+      "iid_radial_coverage": 0.5001611709594727,
+      "iid_radial_inside": 524457,
+      "iid_radial_points": 1048576,
+      "independent_uniform_box_coverage": 0.00039386749267578125,
+      "independent_uniform_box_inside": 413,
+      "independent_uniform_box_points": 1048576,
+      "latent_level": 0.41839550988900787,
+      "method": "degree-two width-64 Rosier-target homogeneous neural anchor with a frozen 3x256 correction",
+      "name": "grune10d",
+      "portable_weights": "weights/grune10d.npz",
+      "portable_weights_sha256": "1dec34d3f8a2b06a0130192be52b71d10a613c1f01862bbb5b70f28d2d5ed188",
+      "pytorch_weights": "weights/grune10d.pt",
+      "pytorch_weights_sha256": "48f83bbb08aac5c8cc277ca0f69e69442084d50e562fdf2a0cb4028ffe9d6d47"
+    },
+    "two_machine": {
+      "array_records": {
+        "core_feature_bias": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "2fb7aa6835c53bbaf1c94e55057184ce680e858a4b27c7da4b70d5293df7a207",
+          "shape": [
+            48
+          ]
+        },
+        "core_feature_weight": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "64117b29a55d5e92993c4e097a5709ea7e62e817a5502084760ab5da85555f98",
+          "shape": [
+            48,
+            2
+          ]
+        },
+        "core_output_bias": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "de88221f3d2ea3dccd12f15690567a0ce98f7c3b727709b4caec850a8d4c5d5b",
+          "shape": []
+        },
+        "core_output_weight": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "783b2b47cbabc23e2d34acad0622c4fdb930496b5e86d97b93849fd971aedf86",
+          "shape": [
+            48
+          ]
+        },
+        "correction_bias_0": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "fa5595fe979157cd1e22d53c8db6536c0472697d4091198f0e6643c573515648",
+          "shape": [
+            32
+          ]
+        },
+        "correction_bias_1": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "9e40b5036da69e3c147aba1e215612f008a5ca8783e6ede7fef7932b1ef19715",
+          "shape": [
+            32
+          ]
+        },
+        "correction_output_weight": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "5326ac3ae96d56c1f63bdf638603d9b75b58f92768938452450e2edc53086b7d",
+          "shape": [
+            1,
+            32
+          ]
+        },
+        "correction_weight_0": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "76e10496c661acb6abd5be11f68eb64d47e67a71635c87c39645ed214f070f31",
+          "shape": [
+            32,
+            2
+          ]
+        },
+        "correction_weight_1": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "55475bd05e055fe269067f77108fb69f6186419d464dc6d1c31edcd8454cad70",
+          "shape": [
+            32,
+            32
+          ]
+        },
+        "input_scale": {
+          "dtype": "float32",
+          "raw_bytes_sha256": "0f9e0aa006f3782e96f800fa154a071185d73a0f0a1894cfadd102081a5715ad",
+          "shape": [
+            2
+          ]
+        }
+      },
+      "bounded_level": 0.7059069747923331,
+      "core_kind": "homogeneous_tanh",
+      "core_margin": 0.27078283518140966,
+      "correction_depth": 2,
+      "correction_gain": 1.1,
+      "correction_width": 32,
+      "dimension": 2,
+      "domain": [
+        [
+          -2.0,
+          3.0
+        ],
+        [
+          -3.0,
+          1.5
+        ]
+      ],
+      "dominant_degree": 1,
+      "evidence": {
+        "historical_formal_proof": "evidence/two_machine_formal_proof.json",
+        "historical_formal_proof_sha256": "7ef8abc76228539195ef1ad447f043a05a915a24769703cc64364603644f642c",
+        "historical_local_preflight": "evidence/two_machine_local_preflight.json",
+        "historical_local_preflight_sha256": "dd7abf55953353155dd79f6a5c501e3e25083744fdc0152d93b034c3ae1ea6c1",
+        "gpu_crown_proof": "evidence/two_machine_gpu_crown.json",
+        "gpu_crown_proof_sha256": "7506b128798ad5095c9c302a714286cf4874a444ac1625301dc83b7090506bdc",
+        "screen": "evidence/two_machine_screen.json",
+        "screen_sha256": "4fea04e5ad6c31e61d1f76004381d00a68dd09ee6f063c8d59dd377c368c677f",
+        "standalone_proof": "evidence/two_machine_standalone_proof.json",
+        "standalone_proof_sha256": "32aff4e495d6208cd014b4cf19a3ce58ad1382ad8fcd1933b7e17268ced67cca"
+      },
+      "evidence_scope": "independent fixed-level screen and complete dReal certificate",
+      "frozen_pytorch_artifact_sha256": "c91d18180c20d913aafd50c3e057d1506841b7ea2b7bff0ba57f4d17b13bc45b",
+      "homogeneous_degree": 2,
+      "independent_coverage": 0.32848644256591797,
+      "latent_level": 0.8789780343726676,
+      "local_radius": 0.0006,
+      "method": "lambda_c=0.2 flow-integral target; LP1 margin then LP2 minimax target fit",
+      "name": "two_machine",
+      "outer_margin": 1e-05,
+      "portable_weights": "weights/two_machine.npz",
+      "portable_weights_sha256": "ec855f7e34bfdad7163c79d0d81568fed84b330e76068b3aafef0ef5b9377083",
+      "pytorch_weights": "weights/two_machine.pt",
+      "pytorch_weights_sha256": "c91d18180c20d913aafd50c3e057d1506841b7ea2b7bff0ba57f4d17b13bc45b",
+      "retained_local_error_bound": 0.1633512374834859
+    }
+  },
+  "formula": "H(x)=V_p(x)*exp(gain*(N(x/input_scale)-N(0))); W(x)=tanh(H(x))",
+  "release_evidence": {
+    "paper_profile_numerical_screen": "evidence/replayed_numerical_screen.json",
+    "paper_profile_numerical_screen_sha256": "f20afd7526968281d3489051b03df17850c7576f6307f16a5fcd1566cec24e52"
+  },
+  "schema": "frozen-anchored-lyapunov-candidates-v1"
+}

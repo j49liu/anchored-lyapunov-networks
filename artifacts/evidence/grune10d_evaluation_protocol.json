@@ -1,0 +1,112 @@
+{
+  "candidate": "10D system",
+  "claim_scope": "fixed post-selection empirical evaluation; not formal verification",
+  "evidence": {
+    "grune10d_evaluation.json": {
+      "path": "evidence/grune10d_evaluation.json",
+      "sha256": "7aee5cdfc8101851f5a2a03ef1377fc97430347a054d10eac83087beb4452769"
+    },
+    "grune10d_frozen_selection.json": {
+      "path": "evidence/grune10d_frozen_selection.json",
+      "sha256": "d6345a11025f4ecc40fe0f5d8d2a4c2c8c70a1e4058e47b1ae9efeca5e9f6a5b"
+    },
+    "grune10d_homogeneous_core.json": {
+      "path": "evidence/grune10d_homogeneous_core.json",
+      "sha256": "c7fb5387c5efee18efdcc2c19d17cbe8908259700f7cff527d5b7e879e008966"
+    },
+    "grune10d_tuning_stress.json": {
+      "path": "evidence/grune10d_tuning_stress.json",
+      "sha256": "48d60070317ba9ea1a157c716e6507b00cde10409e1626dcc2164536348290e1"
+    }
+  },
+  "fixed_candidate": {
+    "bounded_level": 0.39557787511302517,
+    "correction_gain": 0.75,
+    "latent_level": 0.41839550988900787
+  },
+  "frozen_before_evaluation": true,
+  "headline_counts": {
+    "homogeneous_core_sphere": {
+      "directions": 262144,
+      "maximum_DlogV_F": -1.8413040278514257,
+      "minimum_DlogV_F": -2.1274846043019773,
+      "nonfinite_or_nonpositive_count": 0,
+      "nonnegative_ratio_count": 0
+    },
+    "iid_radial": {
+      "coverage": 0.5001611709594727,
+      "inside": 524457,
+      "maximum_LfH_inside": -3.133296075024329e-13,
+      "maximum_absolute_coordinate_inside": [
+        27.707820877640316,
+        26.911581092539745,
+        31.81687368396856,
+        29.66931845415595,
+        32.19746814199238,
+        31.76096872000818,
+        27.20233612324648,
+        30.292092589409826,
+        25.734259452142815,
+        30.181066961569236
+      ],
+      "maximum_phi_inside": -0.42240782992567827,
+      "minimum_positive_H": 1.5803860745376393e-13,
+      "nonfinite_H": 0,
+      "nonfinite_phi": 0,
+      "points": 1048576,
+      "robust_phi_margin_violations_inside": 0,
+      "strict_decrease_violations_inside": 0,
+      "zero_robust_violation_95pct_upper_bound_conditional_on_inside": 5.712048304573614e-06,
+      "zero_strict_violation_95pct_upper_bound_conditional_on_inside": 5.712048304573614e-06
+    },
+    "sampled_boundary": {
+      "inside_or_touching_selected_sublevel": 0,
+      "minimum_H": 0.7826555371188072,
+      "nonfinite_H": 0,
+      "points": 327680,
+      "sampled_separation": 0.36426002722979933,
+      "selected_level": 0.41839550988900787
+    },
+    "uniform_box": {
+      "coverage": 0.00039386749267578125,
+      "inside": 413,
+      "maximum_LfH_inside": -0.2797825544972449,
+      "maximum_absolute_coordinate_inside": [
+        21.556963548064232,
+        22.57956251502037,
+        27.58756384253502,
+        24.50956143438816,
+        30.00382475554943,
+        26.083470061421394,
+        23.55025105178356,
+        28.867606967687607,
+        23.564482256770134,
+        24.60090972483158
+      ],
+      "maximum_phi_inside": -0.9825606855261784,
+      "minimum_positive_H": 0.10290658416942562,
+      "nonfinite_H": 0,
+      "nonfinite_phi": 0,
+      "points": 1048576,
+      "robust_phi_margin_violations_inside": 0,
+      "strict_decrease_violations_inside": 0,
+      "zero_robust_violation_95pct_upper_bound_conditional_on_inside": 0.0072273452553147655,
+      "zero_strict_violation_95pct_upper_bound_conditional_on_inside": 0.0072273452553147655
+    }
+  },
+  "schema": "grune10d-homogeneous-public-evidence-protocol-v1",
+  "seed_policy": "202621* seeds were reserved until checkpoint, correction gain, and level were frozen",
+  "seeds": {
+    "boundary_faces": 20262113,
+    "core_sphere": 20262115,
+    "iid_radial": 20262111,
+    "near_origin": 20262114,
+    "uniform_box": 20262112
+  },
+  "weights": {
+    "portable": "weights/grune10d.npz",
+    "portable_sha256": "1dec34d3f8a2b06a0130192be52b71d10a613c1f01862bbb5b70f28d2d5ed188",
+    "pytorch": "weights/grune10d.pt",
+    "pytorch_sha256": "48f83bbb08aac5c8cc277ca0f69e69442084d50e562fdf2a0cb4028ffe9d6d47"
+  }
+}

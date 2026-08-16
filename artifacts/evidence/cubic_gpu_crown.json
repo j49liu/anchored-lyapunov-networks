@@ -1,0 +1,586 @@
+{
+  "analytic_local_bound": {
+    "argument": "beta=M_V*epsilon(rho)+rho*M_G*(M_f+epsilon(rho)); strict local decrease follows only when beta < eta",
+    "beta": 0.08341580722434758,
+    "core_log_gradient_bound": 451.7246522041714,
+    "core_margin_eta": 0.12781892644251044,
+    "correction_gradient_bound": 122.88202473504388,
+    "dominant_vector_field_bound": 16.970562748477143,
+    "local_radius": 4e-05,
+    "passed": true,
+    "scaled_dynamics_remainder": "||E(r,u)|| <= r^2*(1+r^2/4)",
+    "scaled_dynamics_remainder_at_rho": 1.6000000006400005e-09,
+    "strict_margin_eta_minus_beta": 0.04440311921816287
+  },
+  "candidate": "cubic",
+  "candidate_artifact": {
+    "bounded_level": 0.04154970550507081,
+    "correction_gain": 0.65,
+    "domain": [
+      [
+        -1.5,
+        1.5
+      ],
+      [
+        -1.5,
+        1.5
+      ]
+    ],
+    "latent_level": 0.04157364046865565,
+    "manifest": "artifacts/candidates.json",
+    "portable_weights": "artifacts/weights/cubic.npz",
+    "portable_weights_sha256": "7cec2fd5673de4fcec647b623fb9fd287c4459d8cc91a4ce3acb65181fe6b542"
+  },
+  "claim": "strict Lyapunov sublevel on the complete verification box",
+  "hardware": {
+    "cuda": "12.4",
+    "device": "cuda",
+    "gpu": "NVIDIA H100 NVL",
+    "python": "3.10.12",
+    "torch": "2.6.0+cu124"
+  },
+  "implementation_check": {
+    "maximum_absolute_latent_error": 0.0098876953125,
+    "maximum_absolute_scaled_decrease_error": 2.09808349609375e-05,
+    "maximum_scaled_latent_error": 9.058915566129144e-06,
+    "passed": true,
+    "points": 4096,
+    "scaled_decrease_tolerance": 5e-05,
+    "scaled_latent_tolerance": 2e-05
+  },
+  "method": {
+    "bound_method": "CROWN",
+    "complete_verifier": "exhaustive adaptive input subdivision",
+    "dtype": "float32",
+    "failure_policy": "fail closed on any unresolved tile or backend error",
+    "proof_margin": 1e-06,
+    "proved_properties": {
+      "boundary": "H(x) > c + proof_margin on every face of D",
+      "core": "q_p(u)^T f_d(u) < -(eta + proof_margin) for every ||u||=1",
+      "coverage": "the inner square is contained in B_rho; its four-rectangle complement and the inner square cover the complete box D",
+      "local": "the analytic beta bound satisfies beta < eta on ||x|| <= rho",
+      "outer": "H(x) <= c implies Phi(x) < -(outer_margin + proof_margin) on D outside the inner square"
+    },
+    "settings": {
+      "batch_size": 512,
+      "boundary_initial_tiles_per_face": 64,
+      "core_initial_tiles": 512,
+      "maximum_subdivision_rounds": 56,
+      "maximum_tiles_per_round": 1000000,
+      "round_timeout_seconds": 600.0
+    },
+    "software": "alpha-beta-CROWN",
+    "software_commit": "6b8bbcfac1c01da1cabd240a87e4dce1a65f5a2b",
+    "software_version": "0.7.0",
+    "stopping_criterion": "every terminal tile has a certified CROWN lower bound above the corresponding strengthened specification threshold"
+  },
+  "obligations": [
+    {
+      "elapsed_seconds": 1.6234719771891832,
+      "name": "homogeneous_core_unit_circle",
+      "remaining_tiles": 0,
+      "rounds": [
+        {
+          "elapsed_seconds": 1.2251919039990753,
+          "round": 1,
+          "status": "safe-incomplete",
+          "tiles": 512,
+          "unresolved": 0,
+          "verified": 512
+        }
+      ],
+      "terminal_verified_tiles": 512,
+      "total_tiles_checked": 512,
+      "verified": true
+    },
+    {
+      "elapsed_seconds": 50.86864439886995,
+      "inner_square_corner_radius": 2.828427053294111e-05,
+      "inner_square_half_width": 1.9999999494757503e-05,
+      "local_ball_radius": 4e-05,
+      "name": "outer_sublevel_decrease",
+      "remaining_tiles": 0,
+      "rounds": [
+        {
+          "elapsed_seconds": 1.1001341380178928,
+          "round": 1,
+          "status": "unknown",
+          "tiles": 4,
+          "unresolved": 4,
+          "verified": 0
+        },
+        {
+          "elapsed_seconds": 1.023807808989659,
+          "round": 2,
+          "status": "unknown",
+          "tiles": 8,
+          "unresolved": 8,
+          "verified": 0
+        },
+        {
+          "elapsed_seconds": 1.027277932036668,
+          "round": 3,
+          "status": "unknown",
+          "tiles": 16,
+          "unresolved": 13,
+          "verified": 3
+        },
+        {
+          "elapsed_seconds": 1.031052661826834,
+          "round": 4,
+          "status": "unknown",
+          "tiles": 26,
+          "unresolved": 22,
+          "verified": 4
+        },
+        {
+          "elapsed_seconds": 1.0270494141150266,
+          "round": 5,
+          "status": "unknown",
+          "tiles": 44,
+          "unresolved": 41,
+          "verified": 3
+        },
+        {
+          "elapsed_seconds": 1.0261256070807576,
+          "round": 6,
+          "status": "unknown",
+          "tiles": 82,
+          "unresolved": 62,
+          "verified": 20
+        },
+        {
+          "elapsed_seconds": 1.0329631951171905,
+          "round": 7,
+          "status": "unknown",
+          "tiles": 124,
+          "unresolved": 104,
+          "verified": 20
+        },
+        {
+          "elapsed_seconds": 1.0840136338956654,
+          "round": 8,
+          "status": "unknown",
+          "tiles": 208,
+          "unresolved": 158,
+          "verified": 50
+        },
+        {
+          "elapsed_seconds": 1.041691305115819,
+          "round": 9,
+          "status": "unknown",
+          "tiles": 316,
+          "unresolved": 253,
+          "verified": 63
+        },
+        {
+          "elapsed_seconds": 1.0476681210566312,
+          "round": 10,
+          "status": "unknown",
+          "tiles": 506,
+          "unresolved": 268,
+          "verified": 238
+        },
+        {
+          "elapsed_seconds": 1.0502851919736713,
+          "round": 11,
+          "status": "unknown",
+          "tiles": 536,
+          "unresolved": 329,
+          "verified": 207
+        },
+        {
+          "elapsed_seconds": 0.8229370650369674,
+          "round": 12,
+          "status": "unknown",
+          "tiles": 658,
+          "unresolved": 303,
+          "verified": 355
+        },
+        {
+          "elapsed_seconds": 0.6792570590041578,
+          "round": 13,
+          "status": "unknown",
+          "tiles": 606,
+          "unresolved": 390,
+          "verified": 216
+        },
+        {
+          "elapsed_seconds": 0.8252693309914321,
+          "round": 14,
+          "status": "unknown",
+          "tiles": 780,
+          "unresolved": 377,
+          "verified": 403
+        },
+        {
+          "elapsed_seconds": 0.6788587090559304,
+          "round": 15,
+          "status": "unknown",
+          "tiles": 754,
+          "unresolved": 504,
+          "verified": 250
+        },
+        {
+          "elapsed_seconds": 0.6838231629226357,
+          "round": 16,
+          "status": "unknown",
+          "tiles": 1008,
+          "unresolved": 509,
+          "verified": 499
+        },
+        {
+          "elapsed_seconds": 0.6839481969363987,
+          "round": 17,
+          "status": "unknown",
+          "tiles": 1018,
+          "unresolved": 656,
+          "verified": 362
+        },
+        {
+          "elapsed_seconds": 0.6886170201469213,
+          "round": 18,
+          "status": "unknown",
+          "tiles": 1312,
+          "unresolved": 684,
+          "verified": 628
+        },
+        {
+          "elapsed_seconds": 0.6892438330687582,
+          "round": 19,
+          "status": "unknown",
+          "tiles": 1368,
+          "unresolved": 944,
+          "verified": 424
+        },
+        {
+          "elapsed_seconds": 0.6989754089154303,
+          "round": 20,
+          "status": "unknown",
+          "tiles": 1888,
+          "unresolved": 957,
+          "verified": 931
+        },
+        {
+          "elapsed_seconds": 0.7218193269800395,
+          "round": 21,
+          "status": "unknown",
+          "tiles": 1914,
+          "unresolved": 1340,
+          "verified": 574
+        },
+        {
+          "elapsed_seconds": 0.7052069569472224,
+          "round": 22,
+          "status": "unknown",
+          "tiles": 2680,
+          "unresolved": 1380,
+          "verified": 1300
+        },
+        {
+          "elapsed_seconds": 0.7046238789334893,
+          "round": 23,
+          "status": "unknown",
+          "tiles": 2760,
+          "unresolved": 1863,
+          "verified": 897
+        },
+        {
+          "elapsed_seconds": 0.7168807610869408,
+          "round": 24,
+          "status": "unknown",
+          "tiles": 3726,
+          "unresolved": 1952,
+          "verified": 1774
+        },
+        {
+          "elapsed_seconds": 0.7136807509232312,
+          "round": 25,
+          "status": "unknown",
+          "tiles": 3904,
+          "unresolved": 2542,
+          "verified": 1362
+        },
+        {
+          "elapsed_seconds": 0.7269182531163096,
+          "round": 26,
+          "status": "unknown",
+          "tiles": 5084,
+          "unresolved": 2436,
+          "verified": 2648
+        },
+        {
+          "elapsed_seconds": 0.7796457891818136,
+          "round": 27,
+          "status": "unknown",
+          "tiles": 4872,
+          "unresolved": 2999,
+          "verified": 1873
+        },
+        {
+          "elapsed_seconds": 0.7407525419257581,
+          "round": 28,
+          "status": "unknown",
+          "tiles": 5998,
+          "unresolved": 3006,
+          "verified": 2992
+        },
+        {
+          "elapsed_seconds": 0.7336433418095112,
+          "round": 29,
+          "status": "unknown",
+          "tiles": 6012,
+          "unresolved": 3428,
+          "verified": 2584
+        },
+        {
+          "elapsed_seconds": 0.8465077010914683,
+          "round": 30,
+          "status": "unknown",
+          "tiles": 6856,
+          "unresolved": 3831,
+          "verified": 3025
+        },
+        {
+          "elapsed_seconds": 0.7549302480183542,
+          "round": 31,
+          "status": "unknown",
+          "tiles": 7662,
+          "unresolved": 3855,
+          "verified": 3807
+        },
+        {
+          "elapsed_seconds": 0.7516292619984597,
+          "round": 32,
+          "status": "unknown",
+          "tiles": 7710,
+          "unresolved": 2237,
+          "verified": 5473
+        },
+        {
+          "elapsed_seconds": 0.8817142581101507,
+          "round": 33,
+          "status": "unknown",
+          "tiles": 4474,
+          "unresolved": 1843,
+          "verified": 2631
+        },
+        {
+          "elapsed_seconds": 0.7601812700740993,
+          "round": 34,
+          "status": "unknown",
+          "tiles": 3686,
+          "unresolved": 1561,
+          "verified": 2125
+        },
+        {
+          "elapsed_seconds": 0.7550670141354203,
+          "round": 35,
+          "status": "unknown",
+          "tiles": 3122,
+          "unresolved": 1812,
+          "verified": 1310
+        },
+        {
+          "elapsed_seconds": 0.761219043051824,
+          "round": 36,
+          "status": "unknown",
+          "tiles": 3624,
+          "unresolved": 1793,
+          "verified": 1831
+        },
+        {
+          "elapsed_seconds": 0.7585098249837756,
+          "round": 37,
+          "status": "unknown",
+          "tiles": 3586,
+          "unresolved": 2758,
+          "verified": 828
+        },
+        {
+          "elapsed_seconds": 1.3581823399290442,
+          "round": 38,
+          "status": "unknown",
+          "tiles": 5516,
+          "unresolved": 3985,
+          "verified": 1531
+        },
+        {
+          "elapsed_seconds": 0.8063418981619179,
+          "round": 39,
+          "status": "unknown",
+          "tiles": 7970,
+          "unresolved": 6377,
+          "verified": 1593
+        },
+        {
+          "elapsed_seconds": 0.9733122419565916,
+          "round": 40,
+          "status": "unknown",
+          "tiles": 12754,
+          "unresolved": 8052,
+          "verified": 4702
+        },
+        {
+          "elapsed_seconds": 0.9913462849799544,
+          "round": 41,
+          "status": "unknown",
+          "tiles": 16104,
+          "unresolved": 11184,
+          "verified": 4920
+        },
+        {
+          "elapsed_seconds": 1.2096490440890193,
+          "round": 42,
+          "status": "unknown",
+          "tiles": 22368,
+          "unresolved": 9629,
+          "verified": 12739
+        },
+        {
+          "elapsed_seconds": 1.0357751999981701,
+          "round": 43,
+          "status": "unknown",
+          "tiles": 19258,
+          "unresolved": 12167,
+          "verified": 7091
+        },
+        {
+          "elapsed_seconds": 1.5944588270504028,
+          "round": 44,
+          "status": "unknown",
+          "tiles": 24334,
+          "unresolved": 8354,
+          "verified": 15980
+        },
+        {
+          "elapsed_seconds": 1.3884048340842128,
+          "round": 45,
+          "status": "unknown",
+          "tiles": 16708,
+          "unresolved": 9759,
+          "verified": 6949
+        },
+        {
+          "elapsed_seconds": 1.5394702900666744,
+          "round": 46,
+          "status": "unknown",
+          "tiles": 19518,
+          "unresolved": 4818,
+          "verified": 14700
+        },
+        {
+          "elapsed_seconds": 1.2678841981105506,
+          "round": 47,
+          "status": "unknown",
+          "tiles": 9636,
+          "unresolved": 5154,
+          "verified": 4482
+        },
+        {
+          "elapsed_seconds": 1.4449801568407565,
+          "round": 48,
+          "status": "unknown",
+          "tiles": 10308,
+          "unresolved": 931,
+          "verified": 9377
+        },
+        {
+          "elapsed_seconds": 1.1850430180784315,
+          "round": 49,
+          "status": "unknown",
+          "tiles": 1862,
+          "unresolved": 1241,
+          "verified": 621
+        },
+        {
+          "elapsed_seconds": 1.1018657498061657,
+          "round": 50,
+          "status": "safe-incomplete",
+          "tiles": 2482,
+          "unresolved": 0,
+          "verified": 2482
+        }
+      ],
+      "terminal_verified_tiles": 128877,
+      "total_tiles_checked": 257750,
+      "verified": true
+    },
+    {
+      "elapsed_seconds": 0.23674754612147808,
+      "name": "boundary_x1_lower",
+      "remaining_tiles": 0,
+      "rounds": [
+        {
+          "elapsed_seconds": 0.23523030104115605,
+          "round": 1,
+          "status": "safe-incomplete",
+          "tiles": 64,
+          "unresolved": 0,
+          "verified": 64
+        }
+      ],
+      "terminal_verified_tiles": 64,
+      "total_tiles_checked": 64,
+      "verified": true
+    },
+    {
+      "elapsed_seconds": 0.23257211409509182,
+      "name": "boundary_x1_upper",
+      "remaining_tiles": 0,
+      "rounds": [
+        {
+          "elapsed_seconds": 0.23131441185250878,
+          "round": 1,
+          "status": "safe-incomplete",
+          "tiles": 64,
+          "unresolved": 0,
+          "verified": 64
+        }
+      ],
+      "terminal_verified_tiles": 64,
+      "total_tiles_checked": 64,
+      "verified": true
+    },
+    {
+      "elapsed_seconds": 0.22868315503001213,
+      "name": "boundary_x2_lower",
+      "remaining_tiles": 0,
+      "rounds": [
+        {
+          "elapsed_seconds": 0.22742685792036355,
+          "round": 1,
+          "status": "safe-incomplete",
+          "tiles": 64,
+          "unresolved": 0,
+          "verified": 64
+        }
+      ],
+      "terminal_verified_tiles": 64,
+      "total_tiles_checked": 64,
+      "verified": true
+    },
+    {
+      "elapsed_seconds": 0.22707947599701583,
+      "name": "boundary_x2_upper",
+      "remaining_tiles": 0,
+      "rounds": [
+        {
+          "elapsed_seconds": 0.22585128503851593,
+          "round": 1,
+          "status": "safe-incomplete",
+          "tiles": 64,
+          "unresolved": 0,
+          "verified": 64
+        }
+      ],
+      "terminal_verified_tiles": 64,
+      "total_tiles_checked": 64,
+      "verified": true
+    }
+  ],
+  "process_elapsed_seconds": 57.914159019012004,
+  "schema": "standalone-planar-gpu-crown-proof-v1",
+  "verification_elapsed_seconds": 53.42112383199856,
+  "verified": true
+}

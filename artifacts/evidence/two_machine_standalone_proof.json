@@ -1,0 +1,105 @@
+{
+  "all_required_queries_unsat": true,
+  "candidate": "two_machine",
+  "candidate_artifact": {
+    "bounded_level": 0.7059069747923331,
+    "correction_gain": 1.1,
+    "domain": [
+      [
+        -2.0,
+        3.0
+      ],
+      [
+        -3.0,
+        1.5
+      ]
+    ],
+    "formal_enclosing_bounded_level": 0.7059069747923332,
+    "latent_level": 0.8789780343726676,
+    "manifest": "artifacts/candidates.json",
+    "portable_weights": "artifacts/weights/two_machine.npz",
+    "portable_weights_sha256": "ec855f7e34bfdad7163c79d0d81568fed84b330e76068b3aafef0ef5b9377083"
+  },
+  "claim": "strict Lyapunov sublevel on the complete verification box",
+  "dry_run": false,
+  "local_bound": {
+    "argument": "beta=M_V*epsilon(rho)+rho*M_G*(M_f+epsilon(rho)); strict local decrease follows only when beta < eta",
+    "beta": 0.1633512374834859,
+    "core_log_gradient_bound": 389.19903570267735,
+    "core_margin_eta": 0.27078283518140966,
+    "correction_gradient_bound": 54.896995466669146,
+    "dominant_vector_field_bound": 1.4142135623730951,
+    "local_radius": 0.0006,
+    "passed": true,
+    "scaled_dynamics_remainder": "||E(r,u)|| <= r/2",
+    "scaled_dynamics_remainder_at_rho": 0.0003,
+    "strict_margin_eta_minus_beta": 0.10743159769792376
+  },
+  "queries": [
+    {
+      "elapsed_seconds": 0.21815452398732305,
+      "formula_characters": 10652,
+      "formula_sha256": "b8f999cfbe02f78c5386c92f3841a6d2ee796f54ead32d41643b7cb8aa305180",
+      "index": 1,
+      "name": "homogeneous_core_unit_sphere",
+      "result": "unsat",
+      "status": "complete"
+    },
+    {
+      "elapsed_seconds": 1215.733563639922,
+      "formula_characters": 1812105,
+      "formula_sha256": "2d53379f415df368745119de19fbf4e7f87871062fcd0ff8dcc6882c39be2b14",
+      "index": 2,
+      "name": "outer_shell_counterexample",
+      "result": "unsat",
+      "status": "complete"
+    },
+    {
+      "elapsed_seconds": 1.8422178209293634,
+      "formula_characters": 232169,
+      "formula_sha256": "455e1320160b75ecea5032bce60c0d9155b8ca699d95018e5436dabcee090a88",
+      "index": 3,
+      "name": "boundary_x1_lower",
+      "result": "unsat",
+      "status": "complete"
+    },
+    {
+      "elapsed_seconds": 1.9734317341353744,
+      "formula_characters": 232168,
+      "formula_sha256": "8de94bbbff20e1360dcf54308100a952b84862ac7eaabf37a1ee10257acb16f4",
+      "index": 4,
+      "name": "boundary_x1_upper",
+      "result": "unsat",
+      "status": "complete"
+    },
+    {
+      "elapsed_seconds": 1.9388621940743178,
+      "formula_characters": 232169,
+      "formula_sha256": "31c426b850d7576bbd6168dec759e479b5df6d8e1711000b67d6c6555e8b1f52",
+      "index": 5,
+      "name": "boundary_x2_lower",
+      "result": "unsat",
+      "status": "complete"
+    },
+    {
+      "elapsed_seconds": 2.1528053521178663,
+      "formula_characters": 232170,
+      "formula_sha256": "b89348b549e21f3e4e9c6d1a65df5c9310b3de0edc382e76a29426871c8d390b",
+      "index": 6,
+      "name": "boundary_x2_upper",
+      "result": "unsat",
+      "status": "complete"
+    }
+  ],
+  "schema": "standalone-planar-dreal-proof-v1",
+  "solver": {
+    "backend": "dreal",
+    "elapsed_seconds": 1223.8592566170264,
+    "jobs": 32,
+    "precision": 0.0001,
+    "use_local_optimization": true,
+    "use_polytope_in_forall": true,
+    "version": "4.21.6.2"
+  },
+  "verified": true
+}

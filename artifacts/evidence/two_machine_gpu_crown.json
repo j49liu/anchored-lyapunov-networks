@@ -1,0 +1,466 @@
+{
+  "analytic_local_bound": {
+    "argument": "beta=M_V*epsilon(rho)+rho*M_G*(M_f+epsilon(rho)); strict local decrease follows only when beta < eta",
+    "beta": 0.1633512374834859,
+    "core_log_gradient_bound": 389.19903570267735,
+    "core_margin_eta": 0.27078283518140966,
+    "correction_gradient_bound": 54.896995466669146,
+    "dominant_vector_field_bound": 1.4142135623730951,
+    "local_radius": 0.0006,
+    "passed": true,
+    "scaled_dynamics_remainder": "||E(r,u)|| <= r/2",
+    "scaled_dynamics_remainder_at_rho": 0.0003,
+    "strict_margin_eta_minus_beta": 0.10743159769792376
+  },
+  "candidate": "two_machine",
+  "candidate_artifact": {
+    "bounded_level": 0.7059069747923331,
+    "correction_gain": 1.1,
+    "domain": [
+      [
+        -2.0,
+        3.0
+      ],
+      [
+        -3.0,
+        1.5
+      ]
+    ],
+    "latent_level": 0.8789780343726676,
+    "manifest": "artifacts/candidates.json",
+    "portable_weights": "artifacts/weights/two_machine.npz",
+    "portable_weights_sha256": "ec855f7e34bfdad7163c79d0d81568fed84b330e76068b3aafef0ef5b9377083"
+  },
+  "claim": "strict Lyapunov sublevel on the complete verification box",
+  "hardware": {
+    "cuda": "12.4",
+    "device": "cuda",
+    "gpu": "NVIDIA H100 NVL",
+    "python": "3.10.12",
+    "torch": "2.6.0+cu124"
+  },
+  "implementation_check": {
+    "maximum_absolute_latent_error": 0.0107421875,
+    "maximum_absolute_scaled_decrease_error": 6.67572021484375e-06,
+    "maximum_scaled_latent_error": 9.519662853563204e-06,
+    "passed": true,
+    "points": 4096,
+    "scaled_decrease_tolerance": 5e-05,
+    "scaled_latent_tolerance": 2e-05
+  },
+  "method": {
+    "bound_method": "CROWN",
+    "complete_verifier": "exhaustive adaptive input subdivision",
+    "dtype": "float32",
+    "failure_policy": "fail closed on any unresolved tile or backend error",
+    "proof_margin": 1e-06,
+    "proved_properties": {
+      "boundary": "H(x) > c + proof_margin on every face of D",
+      "core": "q_p(u)^T f_d(u) < -(eta + proof_margin) for every ||u||=1",
+      "coverage": "the inner square is contained in B_rho; its four-rectangle complement and the inner square cover the complete box D",
+      "local": "the analytic beta bound satisfies beta < eta on ||x|| <= rho",
+      "outer": "H(x) <= c implies Phi(x) < -(outer_margin + proof_margin) on D outside the inner square"
+    },
+    "settings": {
+      "batch_size": 512,
+      "boundary_initial_tiles_per_face": 64,
+      "core_initial_tiles": 512,
+      "maximum_subdivision_rounds": 56,
+      "maximum_tiles_per_round": 1000000,
+      "round_timeout_seconds": 600.0
+    },
+    "software": "alpha-beta-CROWN",
+    "software_commit": "6b8bbcfac1c01da1cabd240a87e4dce1a65f5a2b",
+    "software_version": "0.7.0",
+    "stopping_criterion": "every terminal tile has a certified CROWN lower bound above the corresponding strengthened specification threshold"
+  },
+  "obligations": [
+    {
+      "elapsed_seconds": 1.6922404689248651,
+      "name": "homogeneous_core_unit_circle",
+      "remaining_tiles": 0,
+      "rounds": [
+        {
+          "elapsed_seconds": 1.0513612090144306,
+          "round": 1,
+          "status": "safe-incomplete",
+          "tiles": 512,
+          "unresolved": 0,
+          "verified": 512
+        }
+      ],
+      "terminal_verified_tiles": 512,
+      "total_tiles_checked": 512,
+      "verified": true
+    },
+    {
+      "elapsed_seconds": 18.027499441988766,
+      "inner_square_corner_radius": 0.0004242640888633905,
+      "inner_square_half_width": 0.0003000000142492354,
+      "local_ball_radius": 0.0006,
+      "name": "outer_sublevel_decrease",
+      "remaining_tiles": 0,
+      "rounds": [
+        {
+          "elapsed_seconds": 0.5849834750406444,
+          "round": 1,
+          "status": "unknown",
+          "tiles": 4,
+          "unresolved": 4,
+          "verified": 0
+        },
+        {
+          "elapsed_seconds": 0.5170789621770382,
+          "round": 2,
+          "status": "unknown",
+          "tiles": 8,
+          "unresolved": 8,
+          "verified": 0
+        },
+        {
+          "elapsed_seconds": 0.5152028240263462,
+          "round": 3,
+          "status": "unknown",
+          "tiles": 16,
+          "unresolved": 15,
+          "verified": 1
+        },
+        {
+          "elapsed_seconds": 0.5158066030126065,
+          "round": 4,
+          "status": "unknown",
+          "tiles": 30,
+          "unresolved": 25,
+          "verified": 5
+        },
+        {
+          "elapsed_seconds": 0.5146582839079201,
+          "round": 5,
+          "status": "unknown",
+          "tiles": 50,
+          "unresolved": 39,
+          "verified": 11
+        },
+        {
+          "elapsed_seconds": 0.5188421099446714,
+          "round": 6,
+          "status": "unknown",
+          "tiles": 78,
+          "unresolved": 61,
+          "verified": 17
+        },
+        {
+          "elapsed_seconds": 0.5202343459241092,
+          "round": 7,
+          "status": "unknown",
+          "tiles": 122,
+          "unresolved": 102,
+          "verified": 20
+        },
+        {
+          "elapsed_seconds": 0.5273557221516967,
+          "round": 8,
+          "status": "unknown",
+          "tiles": 204,
+          "unresolved": 151,
+          "verified": 53
+        },
+        {
+          "elapsed_seconds": 0.5295693029183894,
+          "round": 9,
+          "status": "unknown",
+          "tiles": 302,
+          "unresolved": 231,
+          "verified": 71
+        },
+        {
+          "elapsed_seconds": 0.5302706570364535,
+          "round": 10,
+          "status": "unknown",
+          "tiles": 462,
+          "unresolved": 327,
+          "verified": 135
+        },
+        {
+          "elapsed_seconds": 0.5351979611441493,
+          "round": 11,
+          "status": "unknown",
+          "tiles": 654,
+          "unresolved": 341,
+          "verified": 313
+        },
+        {
+          "elapsed_seconds": 0.5370749561116099,
+          "round": 12,
+          "status": "unknown",
+          "tiles": 682,
+          "unresolved": 397,
+          "verified": 285
+        },
+        {
+          "elapsed_seconds": 0.5373792101163417,
+          "round": 13,
+          "status": "unknown",
+          "tiles": 794,
+          "unresolved": 423,
+          "verified": 371
+        },
+        {
+          "elapsed_seconds": 0.5401573339477181,
+          "round": 14,
+          "status": "unknown",
+          "tiles": 846,
+          "unresolved": 449,
+          "verified": 397
+        },
+        {
+          "elapsed_seconds": 0.5396206870209426,
+          "round": 15,
+          "status": "unknown",
+          "tiles": 898,
+          "unresolved": 457,
+          "verified": 441
+        },
+        {
+          "elapsed_seconds": 0.5374025630299002,
+          "round": 16,
+          "status": "unknown",
+          "tiles": 914,
+          "unresolved": 427,
+          "verified": 487
+        },
+        {
+          "elapsed_seconds": 0.7815386319998652,
+          "round": 17,
+          "status": "unknown",
+          "tiles": 854,
+          "unresolved": 456,
+          "verified": 398
+        },
+        {
+          "elapsed_seconds": 0.5409751208499074,
+          "round": 18,
+          "status": "unknown",
+          "tiles": 912,
+          "unresolved": 449,
+          "verified": 463
+        },
+        {
+          "elapsed_seconds": 0.53969542006962,
+          "round": 19,
+          "status": "unknown",
+          "tiles": 898,
+          "unresolved": 446,
+          "verified": 452
+        },
+        {
+          "elapsed_seconds": 0.5376345990225673,
+          "round": 20,
+          "status": "unknown",
+          "tiles": 892,
+          "unresolved": 418,
+          "verified": 474
+        },
+        {
+          "elapsed_seconds": 0.5428731208667159,
+          "round": 21,
+          "status": "unknown",
+          "tiles": 836,
+          "unresolved": 389,
+          "verified": 447
+        },
+        {
+          "elapsed_seconds": 0.5358585340436548,
+          "round": 22,
+          "status": "unknown",
+          "tiles": 778,
+          "unresolved": 362,
+          "verified": 416
+        },
+        {
+          "elapsed_seconds": 0.5530641730874777,
+          "round": 23,
+          "status": "unknown",
+          "tiles": 724,
+          "unresolved": 332,
+          "verified": 392
+        },
+        {
+          "elapsed_seconds": 0.4598782961256802,
+          "round": 24,
+          "status": "unknown",
+          "tiles": 664,
+          "unresolved": 260,
+          "verified": 404
+        },
+        {
+          "elapsed_seconds": 0.5075628280173987,
+          "round": 25,
+          "status": "unknown",
+          "tiles": 520,
+          "unresolved": 209,
+          "verified": 311
+        },
+        {
+          "elapsed_seconds": 0.5129710100591183,
+          "round": 26,
+          "status": "unknown",
+          "tiles": 418,
+          "unresolved": 197,
+          "verified": 221
+        },
+        {
+          "elapsed_seconds": 0.5069128070026636,
+          "round": 27,
+          "status": "unknown",
+          "tiles": 394,
+          "unresolved": 195,
+          "verified": 199
+        },
+        {
+          "elapsed_seconds": 0.502740697003901,
+          "round": 28,
+          "status": "unknown",
+          "tiles": 390,
+          "unresolved": 180,
+          "verified": 210
+        },
+        {
+          "elapsed_seconds": 0.48742590099573135,
+          "round": 29,
+          "status": "unknown",
+          "tiles": 360,
+          "unresolved": 170,
+          "verified": 190
+        },
+        {
+          "elapsed_seconds": 0.38502430403605103,
+          "round": 30,
+          "status": "unknown",
+          "tiles": 340,
+          "unresolved": 146,
+          "verified": 194
+        },
+        {
+          "elapsed_seconds": 0.3843579569365829,
+          "round": 31,
+          "status": "unknown",
+          "tiles": 292,
+          "unresolved": 120,
+          "verified": 172
+        },
+        {
+          "elapsed_seconds": 0.38530791900120676,
+          "round": 32,
+          "status": "unknown",
+          "tiles": 240,
+          "unresolved": 71,
+          "verified": 169
+        },
+        {
+          "elapsed_seconds": 0.3824218870140612,
+          "round": 33,
+          "status": "unknown",
+          "tiles": 142,
+          "unresolved": 24,
+          "verified": 118
+        },
+        {
+          "elapsed_seconds": 0.3744027358479798,
+          "round": 34,
+          "status": "unknown",
+          "tiles": 48,
+          "unresolved": 3,
+          "verified": 45
+        },
+        {
+          "elapsed_seconds": 0.323552108136937,
+          "round": 35,
+          "status": "safe-incomplete",
+          "tiles": 6,
+          "unresolved": 0,
+          "verified": 6
+        }
+      ],
+      "terminal_verified_tiles": 7888,
+      "total_tiles_checked": 15772,
+      "verified": true
+    },
+    {
+      "elapsed_seconds": 0.14982409006915987,
+      "name": "boundary_x1_lower",
+      "remaining_tiles": 0,
+      "rounds": [
+        {
+          "elapsed_seconds": 0.14910537307150662,
+          "round": 1,
+          "status": "safe-incomplete",
+          "tiles": 64,
+          "unresolved": 0,
+          "verified": 64
+        }
+      ],
+      "terminal_verified_tiles": 64,
+      "total_tiles_checked": 64,
+      "verified": true
+    },
+    {
+      "elapsed_seconds": 0.15082014305517077,
+      "name": "boundary_x1_upper",
+      "remaining_tiles": 0,
+      "rounds": [
+        {
+          "elapsed_seconds": 0.15006577409803867,
+          "round": 1,
+          "status": "safe-incomplete",
+          "tiles": 64,
+          "unresolved": 0,
+          "verified": 64
+        }
+      ],
+      "terminal_verified_tiles": 64,
+      "total_tiles_checked": 64,
+      "verified": true
+    },
+    {
+      "elapsed_seconds": 0.1501097260043025,
+      "name": "boundary_x2_lower",
+      "remaining_tiles": 0,
+      "rounds": [
+        {
+          "elapsed_seconds": 0.14934370387345552,
+          "round": 1,
+          "status": "safe-incomplete",
+          "tiles": 64,
+          "unresolved": 0,
+          "verified": 64
+        }
+      ],
+      "terminal_verified_tiles": 64,
+      "total_tiles_checked": 64,
+      "verified": true
+    },
+    {
+      "elapsed_seconds": 0.14972011419013143,
+      "name": "boundary_x2_upper",
+      "remaining_tiles": 0,
+      "rounds": [
+        {
+          "elapsed_seconds": 0.1489850168582052,
+          "round": 1,
+          "status": "safe-incomplete",
+          "tiles": 64,
+          "unresolved": 0,
+          "verified": 64
+        }
+      ],
+      "terminal_verified_tiles": 64,
+      "total_tiles_checked": 64,
+      "verified": true
+    }
+  ],
+  "process_elapsed_seconds": 25.062237184029073,
+  "schema": "standalone-planar-gpu-crown-proof-v1",
+  "verification_elapsed_seconds": 20.322687258943915,
+  "verified": true
+}

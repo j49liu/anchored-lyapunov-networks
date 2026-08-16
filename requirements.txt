@@ -1,0 +1,5 @@
+# Lightweight evaluation, plotting, and screening dependencies.
+# dReal and alpha-beta-CROWN are optional verifier backends; see ENVIRONMENT.md.
+numpy==2.2.3
+torch==2.6.0
+matplotlib==3.10.0

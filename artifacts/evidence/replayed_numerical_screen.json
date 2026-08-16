@@ -1,0 +1,63 @@
+{
+  "candidates": {
+    "cubic": {
+      "coverage": 0.19974231719970703,
+      "fixed_bounded_level": 0.04154970550507081,
+      "fixed_latent_level": 0.04157364046865565,
+      "inside": 209445,
+      "margin": 0.01,
+      "margin_violations_inside": 0,
+      "maximum_scaled_log_derivative_inside": -0.1700441698554006,
+      "nonfinite_evaluations": 0,
+      "points": 1048576,
+      "sampled_boundary": {
+        "contained": true,
+        "minimum_H": 0.041993574323811324,
+        "points": 65536,
+        "points_inside_or_on_level": 0
+      },
+      "strict_violations_inside": 0
+    },
+    "grune10d": {
+      "claim_scope": "empirical post-selection screen; not formal verification",
+      "coverage": 0.5001611709594727,
+      "fixed_bounded_level": 0.39557787511302517,
+      "fixed_latent_level": 0.41839550988900787,
+      "inside": 524457,
+      "margin": 0.01,
+      "margin_violations_inside": 0,
+      "maximum_scaled_log_derivative_inside": -0.42240782992567794,
+      "nonfinite_evaluations": 0,
+      "points": 1048576,
+      "proposal": "IID Gaussian directions normalized in infinity norm; uniform radial fraction",
+      "sampled_boundary": {
+        "contained": true,
+        "minimum_H": 0.6187240695696546,
+        "points": 262144,
+        "points_inside_or_on_level": 0
+      },
+      "strict_violations_inside": 0
+    },
+    "two_machine": {
+      "coverage": 0.32848644256591797,
+      "fixed_bounded_level": 0.7059069747923331,
+      "fixed_latent_level": 0.8789780343726676,
+      "inside": 344443,
+      "margin": 0.01,
+      "margin_violations_inside": 0,
+      "maximum_scaled_log_derivative_inside": -0.017951638780678625,
+      "nonfinite_evaluations": 0,
+      "points": 1048576,
+      "sampled_boundary": {
+        "contained": true,
+        "minimum_H": 0.8946836001440477,
+        "points": 65536,
+        "points_inside_or_on_level": 0
+      },
+      "strict_violations_inside": 0
+    }
+  },
+  "device": "cuda:0",
+  "profile": "paper",
+  "schema": "frozen-candidate-numerical-screen-v1"
+}

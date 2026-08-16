@@ -1,0 +1,51 @@
+{
+  "architecture": {
+    "degree": 2,
+    "dimension": 10,
+    "feature_scale": 1.0,
+    "formula": "||x||^2 exp(b + c^T tanh(A x/||x|| + a))",
+    "width": 64
+  },
+  "claim_scope": "sampled convex synthesis and independent numerical validation",
+  "core_artifact": "provenance:homogeneous_core.pt",
+  "core_artifact_sha256": "40a221b943343aec4d56cfea5556ba7898a2aa16cd666fe948a9237d783cb42a",
+  "fit": {
+    "direction_sequence": "unscrambled Sobol-normal unit directions",
+    "directions": 8192,
+    "lp": {
+      "coefficient_l1": 39.22143621369233,
+      "coefficient_max_abs": 7.251633859182141,
+      "nonzero_coefficients_at_1e-10": 64,
+      "objective": 0.38560570946219064,
+      "retained_pointwise_margin_fraction": 0.4,
+      "sampled_sup_log_error": 0.3856056481786967,
+      "solver": "scipy.optimize.linprog(method='highs')",
+      "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "solver_status": 0
+    },
+    "maximum_pointwise_target_margin": 2.2377773185628334,
+    "minimum_pointwise_target_margin": 1.7524083869697051
+  },
+  "normalization": {
+    "multiplicative_factor": 0.0011645882433585593,
+    "normalized_output_bias": -4.484276170188661,
+    "raw_boundary_median": 1717.345174490337,
+    "rule": "median value on 65536 sampled radius-40 box-boundary points equals 2"
+  },
+  "schema": "grune10d-homogeneous-core-synthesis-v1",
+  "target": {
+    "formula": "integral_0^infinity ||exp(F t)u||_4^2 dt",
+    "positive_homogeneous_degree": 2,
+    "quadrature": "96-point Gauss-Legendre on [0,20]"
+  },
+  "validation": {
+    "angular_log_shape_range": 0.34206640533556243,
+    "directions": 131072,
+    "maximum_DlogV_F": -1.8512749405158182,
+    "minimum_DlogV_F": -2.134689397810939,
+    "nonnegative_ratio_count": 0,
+    "rms_log_target_error": 0.17474119968050908,
+    "sup_log_target_error": 0.5311094429265717
+  },
+  "wall_seconds": 18.74118723697029
+}

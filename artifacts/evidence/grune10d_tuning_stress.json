@@ -1,0 +1,1607 @@
+{
+  "checkpoint": {
+    "checkpoint": "provenance:training_checkpoint.pt",
+    "checkpoint_sha256": "0caee7e20d4aeecd42a3824d80f30ac6f922be9acbc84b0d26c187a6810e6e3a",
+    "claim_scope": "tuning-only empirical stress screen; not a formal certificate",
+    "domain": [
+      [
+        -40.0,
+        40.0
+      ],
+      [
+        -40.0,
+        40.0
+      ],
+      [
+        -40.0,
+        40.0
+      ],
+      [
+        -40.0,
+        40.0
+      ],
+      [
+        -40.0,
+        40.0
+      ],
+      [
+        -40.0,
+        40.0
+      ],
+      [
+        -40.0,
+        40.0
+      ],
+      [
+        -40.0,
+        40.0
+      ],
+      [
+        -40.0,
+        40.0
+      ],
+      [
+        -40.0,
+        40.0
+      ]
+    ],
+    "phi_condition": "D(log H) f < -0.01",
+    "profile": "grune10d_final_r40",
+    "scales": {
+      "0.5": {
+        "attack": {
+          "attacked_bad_cap": 0.2805266787612933,
+          "attacked_boundary_cap": 0.562308186605463,
+          "bad_set_minimum_H": {
+            "feasible_seen": 52474,
+            "minimizer": [
+              -19.67152958553621,
+              1.1601801351207384,
+              -12.028337969965964,
+              1.0167100998497802,
+              0.1778671807727101,
+              0.20003677668496814,
+              -0.2827702251234313,
+              0.9334248158049965,
+              14.183049280742088,
+              1.2284619200222782
+            ],
+            "minimum_h": 0.31863610903006984,
+            "penalties": [
+              20.0,
+              100.0,
+              500.0
+            ],
+            "starts": 512,
+            "steps_per_penalty": 200
+          },
+          "boundary_minimization": {
+            "minimizer": [
+              3.5288403960087167,
+              0.6141934050105173,
+              -0.4204718834399174,
+              -1.339612930705636,
+              40.0,
+              1.8612339564418106,
+              2.312844339152106,
+              0.3077904559620755,
+              -0.41786171337219097,
+              0.6783879339660116
+            ],
+            "minimum_h": 0.562308186605463,
+            "starts": 960,
+            "steps": 200
+          },
+          "cap_before_cross_scale_attack_replay": 0.2805266787612933,
+          "combined_cap": 0.28052666950765714,
+          "constrained_Phi_maximization": {
+            "bad_seen": 188,
+            "minimizer": [
+              -21.82907283336038,
+              1.0824783100424937,
+              -17.191323147526845,
+              0.7651762011465879,
+              -3.002765891248338,
+              -0.6239708014710894,
+              -1.276410685564118,
+              0.30860280362112014,
+              1.1540129146487457,
+              -1.0358496704786184
+            ],
+            "minimum_h": 0.2805266787612933,
+            "penalties": [
+              20.0,
+              100.0
+            ],
+            "starts": 512,
+            "steps_per_penalty": 180
+          },
+          "cross_scale_attack_bad_cap": 0.28052666950765714,
+          "cross_scale_attack_boundary_cap": 0.5623081866054673,
+          "static_bad_cap": 0.40891104903791453,
+          "static_boundary_cap": 0.5669171891827183
+        },
+        "conservative_fixed_bounded_level": 0.26697186181826266,
+        "conservative_fixed_latent_level": 0.2736004413591142,
+        "fixed_level_all_stress": {
+          "inside": 742739,
+          "max_phi_inside": -0.050530709432787896,
+          "points": 4787200,
+          "population_breakdown": {
+            "active_feedback_pairs": {
+              "inside": 107936,
+              "points": 294912,
+              "violations": 0
+            },
+            "active_six_x1_x2_x3_x4_x9_x10": {
+              "inside": 4631,
+              "points": 524288,
+              "violations": 0
+            },
+            "confirmation_face_sobol": {
+              "inside": 0,
+              "points": 163840,
+              "violations": 0
+            },
+            "confirmation_sobol_box": {
+              "inside": 81,
+              "points": 1048576,
+              "violations": 0
+            },
+            "exact_adverse_rays_dense": {
+              "inside": 24352,
+              "points": 49158,
+              "violations": 0
+            },
+            "face_centers": {
+              "inside": 0,
+              "points": 20,
+              "violations": 0
+            },
+            "face_near_centers_deterministic": {
+              "inside": 0,
+              "points": 1440,
+              "violations": 0
+            },
+            "face_near_centers_sobol": {
+              "inside": 0,
+              "points": 20480,
+              "violations": 0
+            },
+            "face_sobol_full": {
+              "inside": 0,
+              "points": 163840,
+              "violations": 0
+            },
+            "feedback_x1_x2_x3_x4": {
+              "inside": 9258,
+              "points": 131072,
+              "violations": 0
+            },
+            "feedback_x1_x2_x9_x10": {
+              "inside": 8505,
+              "points": 131072,
+              "violations": 0
+            },
+            "feedback_x5_x6_x7_x8": {
+              "inside": 10269,
+              "points": 131072,
+              "violations": 0
+            },
+            "gradient_attacks_scale_0.5": {
+              "inside": 0,
+              "points": 1660,
+              "violations": 0
+            },
+            "gradient_attacks_scale_0.75": {
+              "inside": 0,
+              "points": 1472,
+              "violations": 0
+            },
+            "gradient_attacks_scale_1": {
+              "inside": 0,
+              "points": 1805,
+              "violations": 0
+            },
+            "gradient_attacks_scale_1.25": {
+              "inside": 149,
+              "points": 1583,
+              "violations": 0
+            },
+            "gradient_attacks_scale_1.5": {
+              "inside": 100,
+              "points": 1486,
+              "violations": 0
+            },
+            "radial_box_endpoints": {
+              "inside": 0,
+              "points": 8366,
+              "violations": 0
+            },
+            "radial_rays": {
+              "inside": 577384,
+              "points": 1062482,
+              "violations": 0
+            },
+            "uniform_sobol_box": {
+              "inside": 74,
+              "points": 1048576,
+              "violations": 0
+            }
+          },
+          "violations": 0
+        },
+        "log_cap_buffer": 0.025,
+        "original_common_tuning_level": 0.5663923225102073,
+        "original_level_violations_on_static_stress": 517,
+        "static_bad_points_any_H": 58383,
+        "static_method_breakdown": {
+          "active_feedback_pairs": {
+            "bad": 6908,
+            "minimum_bad_h": 0.5609428443597972,
+            "points": 294912
+          },
+          "active_six_x1_x2_x3_x4_x9_x10": {
+            "bad": 19238,
+            "minimum_bad_h": 0.44594777924577567,
+            "points": 524288
+          },
+          "exact_adverse_rays_dense": {
+            "bad": 9126,
+            "minimum_bad_h": 0.40891104903791453,
+            "points": 49158
+          },
+          "face_centers": {
+            "bad": 0,
+            "minimum_bad_h": null,
+            "points": 20
+          },
+          "face_near_centers_deterministic": {
+            "bad": 3,
+            "minimum_bad_h": 1.4484638732873527,
+            "points": 1440
+          },
+          "face_near_centers_sobol": {
+            "bad": 44,
+            "minimum_bad_h": 1.4610750551768839,
+            "points": 20480
+          },
+          "face_sobol_full": {
+            "bad": 1965,
+            "minimum_bad_h": 1.4910543457449141,
+            "points": 163840
+          },
+          "feedback_x1_x2_x3_x4": {
+            "bad": 1876,
+            "minimum_bad_h": 0.7303211058339744,
+            "points": 131072
+          },
+          "feedback_x1_x2_x9_x10": {
+            "bad": 8174,
+            "minimum_bad_h": 0.6183125057765976,
+            "points": 131072
+          },
+          "feedback_x5_x6_x7_x8": {
+            "bad": 282,
+            "minimum_bad_h": 0.5689989800506572,
+            "points": 131072
+          },
+          "radial_box_endpoints": {
+            "bad": 128,
+            "minimum_bad_h": 1.4490466144314635,
+            "points": 8366
+          },
+          "radial_rays": {
+            "bad": 1795,
+            "minimum_bad_h": 0.41580239502416294,
+            "points": 1062482
+          },
+          "uniform_sobol_box": {
+            "bad": 8844,
+            "minimum_bad_h": 0.6939810631973536,
+            "points": 1048576
+          }
+        },
+        "static_nonfinite_points": 0,
+        "tuning_box_coverage": {
+          "coverage": 7.390975952148438e-05,
+          "inside": 155,
+          "points": 2097152,
+          "violations": 0
+        }
+      },
+      "0.75": {
+        "attack": {
+          "attacked_bad_cap": 0.428987242648728,
+          "attacked_boundary_cap": 0.6039441366990709,
+          "bad_set_minimum_H": {
+            "feasible_seen": 52700,
+            "minimizer": [
+              -20.92212854298648,
+              1.460941911161953,
+              -13.084123319553557,
+              1.0911686037472212,
+              0.5263722191824293,
+              -0.035895828616588486,
+              0.33772973923842387,
+              1.185963766993051,
+              13.774177220026443,
+              1.8310826248547476
+            ],
+            "minimum_h": 0.428987242648728,
+            "penalties": [
+              20.0,
+              100.0,
+              500.0
+            ],
+            "starts": 512,
+            "steps_per_penalty": 200
+          },
+          "boundary_minimization": {
+            "minimizer": [
+              4.14385459812603,
+              0.7278721653551576,
+              -0.5180133930243637,
+              -0.9833781912949823,
+              40.0,
+              2.240547077956958,
+              2.5108275008455694,
+              0.07636495257448164,
+              -0.4490937284020132,
+              0.5200963778537858
+            ],
+            "minimum_h": 0.6039441366990709,
+            "starts": 960,
+            "steps": 200
+          },
+          "cap_before_cross_scale_attack_replay": 0.428987242648728,
+          "combined_cap": 0.428987242648728,
+          "constrained_Phi_maximization": {
+            "bad_seen": 0,
+            "starts": 512,
+            "steps": 180
+          },
+          "cross_scale_attack_bad_cap": 0.4289872607141372,
+          "cross_scale_attack_boundary_cap": 0.6039441366990738,
+          "static_bad_cap": 0.6086953695318575,
+          "static_boundary_cap": 0.6095417050397429
+        },
+        "conservative_fixed_bounded_level": 0.39557787511302517,
+        "conservative_fixed_latent_level": 0.41839550988900787,
+        "fixed_level_all_stress": {
+          "inside": 873645,
+          "max_phi_inside": -0.07053344915012927,
+          "points": 4787200,
+          "population_breakdown": {
+            "active_feedback_pairs": {
+              "inside": 139827,
+              "points": 294912,
+              "violations": 0
+            },
+            "active_six_x1_x2_x3_x4_x9_x10": {
+              "inside": 11447,
+              "points": 524288,
+              "violations": 0
+            },
+            "confirmation_face_sobol": {
+              "inside": 0,
+              "points": 163840,
+              "violations": 0
+            },
+            "confirmation_sobol_box": {
+              "inside": 405,
+              "points": 1048576,
+              "violations": 0
+            },
+            "exact_adverse_rays_dense": {
+              "inside": 26536,
+              "points": 49158,
+              "violations": 0
+            },
+            "face_centers": {
+              "inside": 0,
+              "points": 20,
+              "violations": 0
+            },
+            "face_near_centers_deterministic": {
+              "inside": 0,
+              "points": 1440,
+              "violations": 0
+            },
+            "face_near_centers_sobol": {
+              "inside": 0,
+              "points": 20480,
+              "violations": 0
+            },
+            "face_sobol_full": {
+              "inside": 0,
+              "points": 163840,
+              "violations": 0
+            },
+            "feedback_x1_x2_x3_x4": {
+              "inside": 16590,
+              "points": 131072,
+              "violations": 0
+            },
+            "feedback_x1_x2_x9_x10": {
+              "inside": 13997,
+              "points": 131072,
+              "violations": 0
+            },
+            "feedback_x5_x6_x7_x8": {
+              "inside": 19196,
+              "points": 131072,
+              "violations": 0
+            },
+            "gradient_attacks_scale_0.5": {
+              "inside": 700,
+              "points": 1660,
+              "violations": 0
+            },
+            "gradient_attacks_scale_0.75": {
+              "inside": 0,
+              "points": 1472,
+              "violations": 0
+            },
+            "gradient_attacks_scale_1": {
+              "inside": 451,
+              "points": 1805,
+              "violations": 0
+            },
+            "gradient_attacks_scale_1.25": {
+              "inside": 495,
+              "points": 1583,
+              "violations": 0
+            },
+            "gradient_attacks_scale_1.5": {
+              "inside": 457,
+              "points": 1486,
+              "violations": 0
+            },
+            "radial_box_endpoints": {
+              "inside": 0,
+              "points": 8366,
+              "violations": 0
+            },
+            "radial_rays": {
+              "inside": 643125,
+              "points": 1062482,
+              "violations": 0
+            },
+            "uniform_sobol_box": {
+              "inside": 419,
+              "points": 1048576,
+              "violations": 0
+            }
+          },
+          "violations": 0
+        },
+        "log_cap_buffer": 0.025,
+        "original_common_tuning_level": 0.612536828873957,
+        "original_level_violations_on_static_stress": 9,
+        "static_bad_points_any_H": 44829,
+        "static_method_breakdown": {
+          "active_feedback_pairs": {
+            "bad": 3913,
+            "minimum_bad_h": 1.4780620652606133,
+            "points": 294912
+          },
+          "active_six_x1_x2_x3_x4_x9_x10": {
+            "bad": 14858,
+            "minimum_bad_h": 0.6923370126743043,
+            "points": 524288
+          },
+          "exact_adverse_rays_dense": {
+            "bad": 5924,
+            "minimum_bad_h": 0.6086953695318575,
+            "points": 49158
+          },
+          "face_centers": {
+            "bad": 0,
+            "minimum_bad_h": null,
+            "points": 20
+          },
+          "face_near_centers_deterministic": {
+            "bad": 2,
+            "minimum_bad_h": 2.277724034710214,
+            "points": 1440
+          },
+          "face_near_centers_sobol": {
+            "bad": 85,
+            "minimum_bad_h": 2.2161941287444256,
+            "points": 20480
+          },
+          "face_sobol_full": {
+            "bad": 1881,
+            "minimum_bad_h": 1.8204002617586514,
+            "points": 163840
+          },
+          "feedback_x1_x2_x3_x4": {
+            "bad": 1000,
+            "minimum_bad_h": 1.299980103649595,
+            "points": 131072
+          },
+          "feedback_x1_x2_x9_x10": {
+            "bad": 6931,
+            "minimum_bad_h": 1.4113897250336824,
+            "points": 131072
+          },
+          "feedback_x5_x6_x7_x8": {
+            "bad": 20,
+            "minimum_bad_h": 2.9994006188816673,
+            "points": 131072
+          },
+          "radial_box_endpoints": {
+            "bad": 126,
+            "minimum_bad_h": 1.7782591740455125,
+            "points": 8366
+          },
+          "radial_rays": {
+            "bad": 1665,
+            "minimum_bad_h": 0.613911875689769,
+            "points": 1062482
+          },
+          "uniform_sobol_box": {
+            "bad": 8424,
+            "minimum_bad_h": 1.5810483968874458,
+            "points": 1048576
+          }
+        },
+        "static_nonfinite_points": 0,
+        "tuning_box_coverage": {
+          "coverage": 0.000392913818359375,
+          "inside": 824,
+          "points": 2097152,
+          "violations": 0
+        }
+      },
+      "1.0": {
+        "attack": {
+          "attacked_bad_cap": 0.38496849845243203,
+          "attacked_boundary_cap": 0.6478786751859654,
+          "bad_set_minimum_H": {
+            "feasible_seen": 54799,
+            "minimizer": [
+              -7.889580599183852,
+              -1.3625314853832258,
+              -0.9790915749741282,
+              -0.6469967315125245,
+              2.2743735878565854,
+              2.1858446530464852,
+              -4.838679017604527,
+              2.2870270751424684,
+              -21.168871085502303,
+              -8.787291469787656
+            ],
+            "minimum_h": 0.3943121372363076,
+            "penalties": [
+              20.0,
+              100.0,
+              500.0
+            ],
+            "starts": 512,
+            "steps_per_penalty": 200
+          },
+          "boundary_minimization": {
+            "minimizer": [
+              4.626274848494875,
+              0.8228217924718072,
+              -0.6040500942108316,
+              -0.6456935167126474,
+              40.0,
+              2.551858891696082,
+              2.6552899594773303,
+              -0.11411168220004947,
+              -0.4712852670009537,
+              0.3757451801509596
+            ],
+            "minimum_h": 0.6478786751859654,
+            "starts": 960,
+            "steps": 200
+          },
+          "cap_before_cross_scale_attack_replay": 0.38496849845243203,
+          "combined_cap": 0.3849684795886737,
+          "constrained_Phi_maximization": {
+            "bad_seen": 333,
+            "minimizer": [
+              -7.939124428794619,
+              -1.4069808359110523,
+              -0.9145151965998337,
+              -1.4538964158179228,
+              2.4145119564878414,
+              2.6419490865097592,
+              -5.311307328940542,
+              2.17609607549327,
+              -21.067074095679253,
+              -8.304641173076517
+            ],
+            "minimum_h": 0.38496849845243203,
+            "penalties": [
+              20.0,
+              100.0
+            ],
+            "starts": 512,
+            "steps_per_penalty": 180
+          },
+          "cross_scale_attack_bad_cap": 0.3849684795886737,
+          "cross_scale_attack_boundary_cap": 0.6478786751859574,
+          "static_bad_cap": 0.9009977214098585,
+          "static_boundary_cap": 0.6553710088035605
+        },
+        "conservative_fixed_bounded_level": 0.3587613729931276,
+        "conservative_fixed_latent_level": 0.3754635739613103,
+        "fixed_level_all_stress": {
+          "inside": 810092,
+          "max_phi_inside": -0.07294235409226735,
+          "points": 4787200,
+          "population_breakdown": {
+            "active_feedback_pairs": {
+              "inside": 124113,
+              "points": 294912,
+              "violations": 0
+            },
+            "active_six_x1_x2_x3_x4_x9_x10": {
+              "inside": 7891,
+              "points": 524288,
+              "violations": 0
+            },
+            "confirmation_face_sobol": {
+              "inside": 0,
+              "points": 163840,
+              "violations": 0
+            },
+            "confirmation_sobol_box": {
+              "inside": 217,
+              "points": 1048576,
+              "violations": 0
+            },
+            "exact_adverse_rays_dense": {
+              "inside": 24654,
+              "points": 49158,
+              "violations": 0
+            },
+            "face_centers": {
+              "inside": 0,
+              "points": 20,
+              "violations": 0
+            },
+            "face_near_centers_deterministic": {
+              "inside": 0,
+              "points": 1440,
+              "violations": 0
+            },
+            "face_near_centers_sobol": {
+              "inside": 0,
+              "points": 20480,
+              "violations": 0
+            },
+            "face_sobol_full": {
+              "inside": 0,
+              "points": 163840,
+              "violations": 0
+            },
+            "feedback_x1_x2_x3_x4": {
+              "inside": 12911,
+              "points": 131072,
+              "violations": 0
+            },
+            "feedback_x1_x2_x9_x10": {
+              "inside": 11136,
+              "points": 131072,
+              "violations": 0
+            },
+            "feedback_x5_x6_x7_x8": {
+              "inside": 14667,
+              "points": 131072,
+              "violations": 0
+            },
+            "gradient_attacks_scale_0.5": {
+              "inside": 102,
+              "points": 1660,
+              "violations": 0
+            },
+            "gradient_attacks_scale_0.75": {
+              "inside": 0,
+              "points": 1472,
+              "violations": 0
+            },
+            "gradient_attacks_scale_1": {
+              "inside": 0,
+              "points": 1805,
+              "violations": 0
+            },
+            "gradient_attacks_scale_1.25": {
+              "inside": 152,
+              "points": 1583,
+              "violations": 0
+            },
+            "gradient_attacks_scale_1.5": {
+              "inside": 141,
+              "points": 1486,
+              "violations": 0
+            },
+            "radial_box_endpoints": {
+              "inside": 0,
+              "points": 8366,
+              "violations": 0
+            },
+            "radial_rays": {
+              "inside": 613911,
+              "points": 1062482,
+              "violations": 0
+            },
+            "uniform_sobol_box": {
+              "inside": 197,
+              "points": 1048576,
+              "violations": 0
+            }
+          },
+          "violations": 0
+        },
+        "log_cap_buffer": 0.025,
+        "original_common_tuning_level": 0.6624407708496112,
+        "original_level_violations_on_static_stress": 0,
+        "static_bad_points_any_H": 44785,
+        "static_method_breakdown": {
+          "active_feedback_pairs": {
+            "bad": 3365,
+            "minimum_bad_h": 2.680062291961814,
+            "points": 294912
+          },
+          "active_six_x1_x2_x3_x4_x9_x10": {
+            "bad": 14545,
+            "minimum_bad_h": 0.9009977214098585,
+            "points": 524288
+          },
+          "exact_adverse_rays_dense": {
+            "bad": 4774,
+            "minimum_bad_h": 4.268058768781544,
+            "points": 49158
+          },
+          "face_centers": {
+            "bad": 0,
+            "minimum_bad_h": null,
+            "points": 20
+          },
+          "face_near_centers_deterministic": {
+            "bad": 3,
+            "minimum_bad_h": 3.5817439937401545,
+            "points": 1440
+          },
+          "face_near_centers_sobol": {
+            "bad": 121,
+            "minimum_bad_h": 3.5315528099712865,
+            "points": 20480
+          },
+          "face_sobol_full": {
+            "bad": 2159,
+            "minimum_bad_h": 2.6161627110123704,
+            "points": 163840
+          },
+          "feedback_x1_x2_x3_x4": {
+            "bad": 771,
+            "minimum_bad_h": 2.0218628516886663,
+            "points": 131072
+          },
+          "feedback_x1_x2_x9_x10": {
+            "bad": 6563,
+            "minimum_bad_h": 1.7865272985226002,
+            "points": 131072
+          },
+          "feedback_x5_x6_x7_x8": {
+            "bad": 26,
+            "minimum_bad_h": 2.6030988721278416,
+            "points": 131072
+          },
+          "radial_box_endpoints": {
+            "bad": 144,
+            "minimum_bad_h": 2.2229361115560478,
+            "points": 8366
+          },
+          "radial_rays": {
+            "bad": 2019,
+            "minimum_bad_h": 1.6176591372259403,
+            "points": 1062482
+          },
+          "uniform_sobol_box": {
+            "bad": 10295,
+            "minimum_bad_h": 1.8676155928923686,
+            "points": 1048576
+          }
+        },
+        "static_nonfinite_points": 0,
+        "tuning_box_coverage": {
+          "coverage": 0.00019741058349609375,
+          "inside": 414,
+          "points": 2097152,
+          "violations": 0
+        }
+      },
+      "1.25": {
+        "attack": {
+          "attacked_bad_cap": 0.3857803951737405,
+          "attacked_boundary_cap": 0.6943736664028112,
+          "bad_set_minimum_H": {
+            "feasible_seen": 56964,
+            "minimizer": [
+              -8.00103661083276,
+              -1.3903353839846968,
+              -1.0017827087966444,
+              -2.843222429927826,
+              1.3982268423012167,
+              2.3651581590302655,
+              -4.716372364115576,
+              1.4351838856189671,
+              -20.545130304543548,
+              -8.204271434436126
+            ],
+            "minimum_h": 0.39447933308749095,
+            "penalties": [
+              20.0,
+              100.0,
+              500.0
+            ],
+            "starts": 512,
+            "steps_per_penalty": 200
+          },
+          "boundary_minimization": {
+            "minimizer": [
+              5.010207751303735,
+              0.8970286401425497,
+              -0.6768778288610444,
+              -0.3277249755782605,
+              40.0,
+              2.8095301333381273,
+              2.7625671811492025,
+              -0.2811094033207502,
+              -0.48425287167248565,
+              0.23993918393185137
+            ],
+            "minimum_h": 0.6943736664028112,
+            "starts": 960,
+            "steps": 200
+          },
+          "cap_before_cross_scale_attack_replay": 0.3857803951737405,
+          "combined_cap": 0.3857803951737405,
+          "constrained_Phi_maximization": {
+            "bad_seen": 111,
+            "minimizer": [
+              -7.354054484542301,
+              -1.75671404376138,
+              -1.076089536953193,
+              -1.7138865015094602,
+              2.573605527568812,
+              2.0978107824452232,
+              -5.022570419882526,
+              1.9331555940915475,
+              -20.718236571115092,
+              -8.129012833838605
+            ],
+            "minimum_h": 0.3857803951737405,
+            "penalties": [
+              20.0,
+              100.0
+            ],
+            "starts": 512,
+            "steps_per_penalty": 180
+          },
+          "cross_scale_attack_bad_cap": 0.3857804282392441,
+          "cross_scale_attack_boundary_cap": 0.6943736664028048,
+          "static_bad_cap": 1.174245804612281,
+          "static_boundary_cap": 0.7046460572409754
+        },
+        "conservative_fixed_bounded_level": 0.3594511249333531,
+        "conservative_fixed_latent_level": 0.3762554432791563,
+        "fixed_level_all_stress": {
+          "inside": 792465,
+          "max_phi_inside": -0.05432724351790785,
+          "points": 4787200,
+          "population_breakdown": {
+            "active_feedback_pairs": {
+              "inside": 119360,
+              "points": 294912,
+              "violations": 0
+            },
+            "active_six_x1_x2_x3_x4_x9_x10": {
+              "inside": 7205,
+              "points": 524288,
+              "violations": 0
+            },
+            "confirmation_face_sobol": {
+              "inside": 0,
+              "points": 163840,
+              "violations": 0
+            },
+            "confirmation_sobol_box": {
+              "inside": 187,
+              "points": 1048576,
+              "violations": 0
+            },
+            "exact_adverse_rays_dense": {
+              "inside": 23877,
+              "points": 49158,
+              "violations": 0
+            },
+            "face_centers": {
+              "inside": 0,
+              "points": 20,
+              "violations": 0
+            },
+            "face_near_centers_deterministic": {
+              "inside": 0,
+              "points": 1440,
+              "violations": 0
+            },
+            "face_near_centers_sobol": {
+              "inside": 0,
+              "points": 20480,
+              "violations": 0
+            },
+            "face_sobol_full": {
+              "inside": 0,
+              "points": 163840,
+              "violations": 0
+            },
+            "feedback_x1_x2_x3_x4": {
+              "inside": 12010,
+              "points": 131072,
+              "violations": 0
+            },
+            "feedback_x1_x2_x9_x10": {
+              "inside": 10363,
+              "points": 131072,
+              "violations": 0
+            },
+            "feedback_x5_x6_x7_x8": {
+              "inside": 13543,
+              "points": 131072,
+              "violations": 0
+            },
+            "gradient_attacks_scale_0.5": {
+              "inside": 1,
+              "points": 1660,
+              "violations": 0
+            },
+            "gradient_attacks_scale_0.75": {
+              "inside": 0,
+              "points": 1472,
+              "violations": 0
+            },
+            "gradient_attacks_scale_1": {
+              "inside": 0,
+              "points": 1805,
+              "violations": 0
+            },
+            "gradient_attacks_scale_1.25": {
+              "inside": 0,
+              "points": 1583,
+              "violations": 0
+            },
+            "gradient_attacks_scale_1.5": {
+              "inside": 34,
+              "points": 1486,
+              "violations": 0
+            },
+            "radial_box_endpoints": {
+              "inside": 0,
+              "points": 8366,
+              "violations": 0
+            },
+            "radial_rays": {
+              "inside": 605715,
+              "points": 1062482,
+              "violations": 0
+            },
+            "uniform_sobol_box": {
+              "inside": 170,
+              "points": 1048576,
+              "violations": 0
+            }
+          },
+          "violations": 0
+        },
+        "log_cap_buffer": 0.025,
+        "original_common_tuning_level": 0.7164104331335245,
+        "original_level_violations_on_static_stress": 0,
+        "static_bad_points_any_H": 48812,
+        "static_method_breakdown": {
+          "active_feedback_pairs": {
+            "bad": 3048,
+            "minimum_bad_h": 4.301690646928547,
+            "points": 294912
+          },
+          "active_six_x1_x2_x3_x4_x9_x10": {
+            "bad": 15501,
+            "minimum_bad_h": 1.174245804612281,
+            "points": 524288
+          },
+          "exact_adverse_rays_dense": {
+            "bad": 4184,
+            "minimum_bad_h": 7.552511363350993,
+            "points": 49158
+          },
+          "face_centers": {
+            "bad": 0,
+            "minimum_bad_h": null,
+            "points": 20
+          },
+          "face_near_centers_deterministic": {
+            "bad": 3,
+            "minimum_bad_h": 5.632328517939111,
+            "points": 1440
+          },
+          "face_near_centers_sobol": {
+            "bad": 167,
+            "minimum_bad_h": 5.121906139777143,
+            "points": 20480
+          },
+          "face_sobol_full": {
+            "bad": 2532,
+            "minimum_bad_h": 3.594944068526331,
+            "points": 163840
+          },
+          "feedback_x1_x2_x3_x4": {
+            "bad": 719,
+            "minimum_bad_h": 2.4640529989159665,
+            "points": 131072
+          },
+          "feedback_x1_x2_x9_x10": {
+            "bad": 6550,
+            "minimum_bad_h": 2.1601561064925456,
+            "points": 131072
+          },
+          "feedback_x5_x6_x7_x8": {
+            "bad": 96,
+            "minimum_bad_h": 1.7627316322182456,
+            "points": 131072
+          },
+          "radial_box_endpoints": {
+            "bad": 172,
+            "minimum_bad_h": 2.9532893400308438,
+            "points": 8366
+          },
+          "radial_rays": {
+            "bad": 2670,
+            "minimum_bad_h": 1.2821142817674211,
+            "points": 1062482
+          },
+          "uniform_sobol_box": {
+            "bad": 13170,
+            "minimum_bad_h": 2.0777086124236104,
+            "points": 1048576
+          }
+        },
+        "static_nonfinite_points": 0,
+        "tuning_box_coverage": {
+          "coverage": 0.00017023086547851562,
+          "inside": 357,
+          "points": 2097152,
+          "violations": 0
+        }
+      },
+      "1.5": {
+        "attack": {
+          "attacked_bad_cap": 0.397715499060084,
+          "attacked_boundary_cap": 0.7368151922044027,
+          "bad_set_minimum_H": {
+            "feasible_seen": 58138,
+            "minimizer": [
+              -7.124819526198796,
+              -2.0113450214374926,
+              -1.0388054362664865,
+              -1.7465870215839594,
+              2.7373307647945366,
+              1.987456273607728,
+              -4.665753447508774,
+              1.6834494056851756,
+              -20.48725488167756,
+              -7.957249877093984
+            ],
+            "minimum_h": 0.40094444372035604,
+            "penalties": [
+              20.0,
+              100.0,
+              500.0
+            ],
+            "starts": 512,
+            "steps_per_penalty": 200
+          },
+          "boundary_minimization": {
+            "minimizer": [
+              -0.031187239653075526,
+              7.090073078435988,
+              -40.0,
+              4.574816951036681,
+              -0.07103569166547476,
+              -2.921732615152672,
+              -2.6522106095693214,
+              -2.4192583363182587,
+              2.8119667328048625,
+              -1.3186993136120193
+            ],
+            "minimum_h": 0.7368151922044027,
+            "starts": 960,
+            "steps": 200
+          },
+          "cap_before_cross_scale_attack_replay": 0.397715499060084,
+          "combined_cap": 0.397715499060084,
+          "constrained_Phi_maximization": {
+            "bad_seen": 14,
+            "minimizer": [
+              -6.893325927773561,
+              -1.9947020118848928,
+              -0.9310897759388189,
+              -1.722864041816311,
+              2.821024189666055,
+              2.032182784397784,
+              -4.641240369030822,
+              1.6777245550786188,
+              -20.584775589404575,
+              -7.985056177394813
+            ],
+            "minimum_h": 0.397715499060084,
+            "penalties": [
+              20.0,
+              100.0
+            ],
+            "starts": 512,
+            "steps_per_penalty": 180
+          },
+          "cross_scale_attack_bad_cap": 0.39771553053367686,
+          "cross_scale_attack_boundary_cap": 0.7368151922043862,
+          "static_bad_cap": 0.8277559607514701,
+          "static_boundary_cap": 0.7576259238133003
+        },
+        "conservative_fixed_bounded_level": 0.3695448579047529,
+        "conservative_fixed_latent_level": 0.3878958684005949,
+        "fixed_level_all_stress": {
+          "inside": 785659,
+          "max_phi_inside": -0.4691784073749358,
+          "points": 4787200,
+          "population_breakdown": {
+            "active_feedback_pairs": {
+              "inside": 117367,
+              "points": 294912,
+              "violations": 0
+            },
+            "active_six_x1_x2_x3_x4_x9_x10": {
+              "inside": 7072,
+              "points": 524288,
+              "violations": 0
+            },
+            "confirmation_face_sobol": {
+              "inside": 0,
+              "points": 163840,
+              "violations": 0
+            },
+            "confirmation_sobol_box": {
+              "inside": 181,
+              "points": 1048576,
+              "violations": 0
+            },
+            "exact_adverse_rays_dense": {
+              "inside": 23408,
+              "points": 49158,
+              "violations": 0
+            },
+            "face_centers": {
+              "inside": 0,
+              "points": 20,
+              "violations": 0
+            },
+            "face_near_centers_deterministic": {
+              "inside": 0,
+              "points": 1440,
+              "violations": 0
+            },
+            "face_near_centers_sobol": {
+              "inside": 0,
+              "points": 20480,
+              "violations": 0
+            },
+            "face_sobol_full": {
+              "inside": 0,
+              "points": 163840,
+              "violations": 0
+            },
+            "feedback_x1_x2_x3_x4": {
+              "inside": 11693,
+              "points": 131072,
+              "violations": 0
+            },
+            "feedback_x1_x2_x9_x10": {
+              "inside": 10034,
+              "points": 131072,
+              "violations": 0
+            },
+            "feedback_x5_x6_x7_x8": {
+              "inside": 13117,
+              "points": 131072,
+              "violations": 0
+            },
+            "gradient_attacks_scale_0.5": {
+              "inside": 0,
+              "points": 1660,
+              "violations": 0
+            },
+            "gradient_attacks_scale_0.75": {
+              "inside": 0,
+              "points": 1472,
+              "violations": 0
+            },
+            "gradient_attacks_scale_1": {
+              "inside": 0,
+              "points": 1805,
+              "violations": 0
+            },
+            "gradient_attacks_scale_1.25": {
+              "inside": 0,
+              "points": 1583,
+              "violations": 0
+            },
+            "gradient_attacks_scale_1.5": {
+              "inside": 0,
+              "points": 1486,
+              "violations": 0
+            },
+            "radial_box_endpoints": {
+              "inside": 0,
+              "points": 8366,
+              "violations": 0
+            },
+            "radial_rays": {
+              "inside": 602621,
+              "points": 1062482,
+              "violations": 0
+            },
+            "uniform_sobol_box": {
+              "inside": 166,
+              "points": 1048576,
+              "violations": 0
+            }
+          },
+          "violations": 0
+        },
+        "log_cap_buffer": 0.025,
+        "original_common_tuning_level": 0.7747770537195421,
+        "original_level_violations_on_static_stress": 0,
+        "static_bad_points_any_H": 54918,
+        "static_method_breakdown": {
+          "active_feedback_pairs": {
+            "bad": 3321,
+            "minimum_bad_h": 3.116310191631526,
+            "points": 294912
+          },
+          "active_six_x1_x2_x3_x4_x9_x10": {
+            "bad": 16959,
+            "minimum_bad_h": 1.477049606392193,
+            "points": 524288
+          },
+          "exact_adverse_rays_dense": {
+            "bad": 3776,
+            "minimum_bad_h": 13.271389330618547,
+            "points": 49158
+          },
+          "face_centers": {
+            "bad": 0,
+            "minimum_bad_h": null,
+            "points": 20
+          },
+          "face_near_centers_deterministic": {
+            "bad": 7,
+            "minimum_bad_h": 8.856893342861179,
+            "points": 1440
+          },
+          "face_near_centers_sobol": {
+            "bad": 235,
+            "minimum_bad_h": 7.85253377858226,
+            "points": 20480
+          },
+          "face_sobol_full": {
+            "bad": 2940,
+            "minimum_bad_h": 3.89314067208011,
+            "points": 163840
+          },
+          "feedback_x1_x2_x3_x4": {
+            "bad": 767,
+            "minimum_bad_h": 2.8359895384718437,
+            "points": 131072
+          },
+          "feedback_x1_x2_x9_x10": {
+            "bad": 6711,
+            "minimum_bad_h": 0.8277559607514701,
+            "points": 131072
+          },
+          "feedback_x5_x6_x7_x8": {
+            "bad": 181,
+            "minimum_bad_h": 1.8739522082983517,
+            "points": 131072
+          },
+          "radial_box_endpoints": {
+            "bad": 209,
+            "minimum_bad_h": 3.2971241132536644,
+            "points": 8366
+          },
+          "radial_rays": {
+            "bad": 3435,
+            "minimum_bad_h": 1.078384938747852,
+            "points": 1062482
+          },
+          "uniform_sobol_box": {
+            "bad": 16377,
+            "minimum_bad_h": 2.0350794554990967,
+            "points": 1048576
+          }
+        },
+        "static_nonfinite_points": 0,
+        "tuning_box_coverage": {
+          "coverage": 0.00016546249389648438,
+          "inside": 347,
+          "points": 2097152,
+          "violations": 0
+        }
+      }
+    },
+    "selected": {
+      "all_stress": {
+        "inside": 873645,
+        "max_phi_inside": -0.07053344915012927,
+        "points": 4787200,
+        "population_breakdown": {
+          "active_feedback_pairs": {
+            "inside": 139827,
+            "points": 294912,
+            "violations": 0
+          },
+          "active_six_x1_x2_x3_x4_x9_x10": {
+            "inside": 11447,
+            "points": 524288,
+            "violations": 0
+          },
+          "confirmation_face_sobol": {
+            "inside": 0,
+            "points": 163840,
+            "violations": 0
+          },
+          "confirmation_sobol_box": {
+            "inside": 405,
+            "points": 1048576,
+            "violations": 0
+          },
+          "exact_adverse_rays_dense": {
+            "inside": 26536,
+            "points": 49158,
+            "violations": 0
+          },
+          "face_centers": {
+            "inside": 0,
+            "points": 20,
+            "violations": 0
+          },
+          "face_near_centers_deterministic": {
+            "inside": 0,
+            "points": 1440,
+            "violations": 0
+          },
+          "face_near_centers_sobol": {
+            "inside": 0,
+            "points": 20480,
+            "violations": 0
+          },
+          "face_sobol_full": {
+            "inside": 0,
+            "points": 163840,
+            "violations": 0
+          },
+          "feedback_x1_x2_x3_x4": {
+            "inside": 16590,
+            "points": 131072,
+            "violations": 0
+          },
+          "feedback_x1_x2_x9_x10": {
+            "inside": 13997,
+            "points": 131072,
+            "violations": 0
+          },
+          "feedback_x5_x6_x7_x8": {
+            "inside": 19196,
+            "points": 131072,
+            "violations": 0
+          },
+          "gradient_attacks_scale_0.5": {
+            "inside": 700,
+            "points": 1660,
+            "violations": 0
+          },
+          "gradient_attacks_scale_0.75": {
+            "inside": 0,
+            "points": 1472,
+            "violations": 0
+          },
+          "gradient_attacks_scale_1": {
+            "inside": 451,
+            "points": 1805,
+            "violations": 0
+          },
+          "gradient_attacks_scale_1.25": {
+            "inside": 495,
+            "points": 1583,
+            "violations": 0
+          },
+          "gradient_attacks_scale_1.5": {
+            "inside": 457,
+            "points": 1486,
+            "violations": 0
+          },
+          "radial_box_endpoints": {
+            "inside": 0,
+            "points": 8366,
+            "violations": 0
+          },
+          "radial_rays": {
+            "inside": 643125,
+            "points": 1062482,
+            "violations": 0
+          },
+          "uniform_sobol_box": {
+            "inside": 419,
+            "points": 1048576,
+            "violations": 0
+          }
+        },
+        "violations": 0
+      },
+      "bounded_level": 0.39557787511302517,
+      "correction_scale": 0.75,
+      "latent_level": 0.41839550988900787,
+      "reach": {
+        "coordinate_axes": {
+          "x1+": 28.22755083496094,
+          "x1-": 29.75098681152344,
+          "x10+": 32.44141380859375,
+          "x10-": 31.03028240722656,
+          "x2+": 27.91016833984375,
+          "x2-": 27.417004770507813,
+          "x3+": 33.15918652832031,
+          "x3-": 32.54395276855469,
+          "x4+": 31.015633984375,
+          "x4-": 30.98145433105469,
+          "x5+": 33.5546939453125,
+          "x5-": 33.18848337402344,
+          "x6+": 32.094734467773435,
+          "x6-": 32.597663652343755,
+          "x7+": 28.374035063476562,
+          "x7-": 27.34864546386719,
+          "x8+": 32.314460810546876,
+          "x8-": 32.91992895507812,
+          "x9+": 25.38087399414063,
+          "x9-": 26.0547014453125
+        },
+        "sobol_radial_rays": {
+          "directions": 8192,
+          "euclidean_reach_quantiles": {
+            "0.0": 25.775437135727007,
+            "0.01": 28.67764715946817,
+            "0.1": 30.733697633972245,
+            "0.5": 32.64552330257827,
+            "0.9": 34.87758957795328,
+            "0.99": 36.37443557200804,
+            "1.0": 37.96777755816035
+          },
+          "fraction_of_box_boundary_quantiles": {
+            "0.0": 0.30860066406250003,
+            "0.01": 0.35938140625000004,
+            "0.1": 0.4062559375,
+            "0.5": 0.4882863671875,
+            "0.9": 0.5976602734375,
+            "0.99": 0.7031279687499999,
+            "1.0": 0.8242205078125
+          },
+          "maximum_absolute_coordinate_reached": [
+            28.437615625,
+            26.562634375,
+            30.781342187499998,
+            30.0001,
+            32.9688203125,
+            30.937590625,
+            27.812621874999998,
+            31.2500875,
+            26.2501375,
+            31.093839062500003
+          ]
+        }
+      },
+      "tuning_box_coverage": {
+        "coverage": 0.000392913818359375,
+        "inside": 824,
+        "points": 2097152,
+        "violations": 0
+      }
+    },
+    "source_training_selected": {
+      "boundary_contained": true,
+      "boundary_minimum_latent": 0.782603084565194,
+      "boundary_points": 65536,
+      "bounded_level": 0.649698643534469,
+      "box_area": 2.435072e+16,
+      "correction_scale": 1.5,
+      "coverage": 0.0022678375244140625,
+      "decrease_passed": true,
+      "fixed_level_passed": null,
+      "latent_level": 0.7747770537195421,
+      "level_was_frozen_before_population": false,
+      "maximum_phi_inside": -1.1818140985787144,
+      "minimum_phi_box": -158.33841059710866,
+      "nonfinite_latent_values": 0,
+      "observed_population_cap": 0.782603084565194,
+      "points": 524288,
+      "violations_inside": 0
+    },
+    "training_tuning_record_sha256": "197ede8fe1af1e6533cf2f5ede2a8bd633539ec41cce58ebe64d142db99ae3a1",
+    "wall_seconds": 223.62730137002654
+  },
+  "protocol": {
+    "arguments": {
+      "active_six_points": 524288,
+      "attack_steps": 200,
+      "batch_size": 32768,
+      "boundary_attack_starts_per_face": 48,
+      "confirmation_face_points_per_face": 8192,
+      "confirmation_points": 1048576,
+      "face_points_per_face": 8192,
+      "feedback_four_points": 131072,
+      "near_face_points_per_face": 1024,
+      "pair_points": 32768,
+      "radial_directions": 8192,
+      "radial_steps": 128,
+      "reach_directions": 8192,
+      "uniform_points": 1048576
+    },
+    "correction_scales": [
+      0.5,
+      0.75,
+      1.0,
+      1.25,
+      1.5
+    ],
+    "driver": "provenance:homogeneous_10d_pipeline.py",
+    "driver_sha256": "76e0221ec0c5e55c6755898de9b3a61d72f7ee0914638f21fbb8c329df4c8639",
+    "heldout_seed_policy": "No 202611*, 202617*, or 202621* seed is used.",
+    "log_cap_buffer": 0.025,
+    "phi_threshold": -0.01,
+    "population_manifest": {
+      "active_feedback_pairs": 294912,
+      "active_six_x1_x2_x3_x4_x9_x10": 524288,
+      "exact_adverse_rays_dense": 49158,
+      "face_centers": 20,
+      "face_near_centers_deterministic": 1440,
+      "face_near_centers_sobol": 20480,
+      "face_sobol_full": 163840,
+      "feedback_x1_x2_x3_x4": 131072,
+      "feedback_x1_x2_x9_x10": 131072,
+      "feedback_x5_x6_x7_x8": 131072,
+      "radial_box_endpoints": 8366,
+      "radial_rays": 1062482,
+      "uniform_sobol_box": 1048576
+    },
+    "seeds": {
+      "active_pairs": 20261026,
+      "active_six": 20261024,
+      "attack_initialization": 20261028,
+      "face_neighborhoods": 20261023,
+      "feedback_four": 20261025,
+      "final_confirmation_box": 20261061,
+      "final_confirmation_faces": 20261062,
+      "full_faces": 20261022,
+      "radial_directions": 20261027,
+      "reach_directions": 20261063,
+      "uniform_box": 20261021
+    },
+    "selection_rule": "Among scales with zero violations at the buffered level, maximize combined tuning-Sobol box coverage; ties favor smaller scale. Replay every scale's gradient-attack points against every scale.",
+    "source_implementation": "provenance:grune10d_tuning_stress.py",
+    "source_implementation_sha256": "7a21938faa036d777f152ce0aa53f851ef4eb06d9b20fd23e2b093437d6e36de",
+    "wrapper": "provenance:stress_and_freeze.py",
+    "wrapper_sha256": "0d1fea8cdc74aa3729808193f2e594ffa5df76c976aad97ab08cea5946bfb824"
+  },
+  "schema": "grune10d-homogeneous-tuning-stress-v1"
+}

@@ -1,0 +1,69 @@
+{
+  "adapter": {
+    "maximum_absolute_H_error": 0.0,
+    "maximum_absolute_W_error": 0.0,
+    "maximum_scaled_H_gradient_error": 0.0,
+    "passed": true,
+    "points": 65536,
+    "seed": 20261020
+  },
+  "benchmark": "cubic",
+  "bindings": {
+    "safe_checkpoint": {
+      "path": "frozen/cubic/model_safe_state.pt",
+      "sha256": "ff82153c8c6237502f7042919f1da03213f523d3657c51fe4241ebe5989d32be"
+    },
+    "source_tuning_selection": {
+      "path": "../discounted_canonical_lambda=0.2_final/frozen_tuning_selection.json",
+      "sha256": "7e5d47fc3dfe9736b3cfdb8b753dbc7a9037449ff5e2843815b4820bf770c57f"
+    },
+    "verification_adapter": {
+      "path": "shared_candidate_handoff.py",
+      "sha256": "74c2dfe04249552dd87185e877ed83b0a2878d3d023d2bce0a65f125440de5f0"
+    },
+    "verification_freeze": {
+      "path": "frozen/frozen_verification_selection.json",
+      "sha256": "ae8934f63014443030301970dadfacc80fea1cd4cc841524a08ebd386680437c"
+    },
+    "verification_protocol": {
+      "path": "verification_protocol.json",
+      "sha256": "67452592cf891a5084326b5bc77d78aa6fa70050d578287f1573eab681f4fdde"
+    }
+  },
+  "claim_scope": "adapter identity and analytic local-bound preparation; no complete formal claim",
+  "created_utc": "2026-08-15T08:24:44.335617+00:00",
+  "local_split": {
+    "angular_diagnostic": {
+      "guarantee": "none until the complete-circle dReal query is UNSAT",
+      "maximum_log_derivative": -0.1704252352566806,
+      "minimum_log_derivative": -8.54723468204984,
+      "minimum_observed_margin": 0.1704252352566806,
+      "points": 131072
+    },
+    "certified_component_bounds": {
+      "core_log_gradient": 451.7246522041714,
+      "correction_gradient": 122.88202473504388,
+      "dominant_vector_field": 16.970562748477143
+    },
+    "core_margin": 0.12781892644251044,
+    "core_margin_rule": "0.75 times the sampled minimum margin",
+    "dominant_degree": 3,
+    "local_bound_passed": true,
+    "local_error_bound": 0.08341917337352575,
+    "local_error_budget": 0.09586419483188283,
+    "local_radius": 4e-05,
+    "outer_margin": 1e-05,
+    "remainder": {
+      "component_constants": [
+        4.000320080003755,
+        4.000320080003755
+      ],
+      "constant": 5.657306910974735,
+      "method": "symbolic Taylor jet plus exact-rational natural-interval bounds on derivatives of total order 5",
+      "order": 2,
+      "radius": 4e-05,
+      "taylor_degree": 4
+    }
+  },
+  "schema": "discounted-canonical-formal-preflight-v1"
+}

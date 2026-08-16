@@ -1,0 +1,81 @@
+{
+  "claim_scope": "fixed before independent evaluation; not formal",
+  "frozen_checkpoint": "weights/grune10d.pt",
+  "frozen_checkpoint_sha256": "48f83bbb08aac5c8cc277ca0f69e69442084d50e562fdf2a0cb4028ffe9d6d47",
+  "schema": "grune10d-homogeneous-frozen-selection-v1",
+  "selected": {
+    "bounded_level": 0.39557787511302517,
+    "correction_scale": 0.75,
+    "latent_level": 0.41839550988900787,
+    "maximum_phi_inside": -0.07053344915012927,
+    "reach": {
+      "coordinate_axes": {
+        "x1+": 28.22755083496094,
+        "x1-": 29.75098681152344,
+        "x10+": 32.44141380859375,
+        "x10-": 31.03028240722656,
+        "x2+": 27.91016833984375,
+        "x2-": 27.417004770507813,
+        "x3+": 33.15918652832031,
+        "x3-": 32.54395276855469,
+        "x4+": 31.015633984375,
+        "x4-": 30.98145433105469,
+        "x5+": 33.5546939453125,
+        "x5-": 33.18848337402344,
+        "x6+": 32.094734467773435,
+        "x6-": 32.597663652343755,
+        "x7+": 28.374035063476562,
+        "x7-": 27.34864546386719,
+        "x8+": 32.314460810546876,
+        "x8-": 32.91992895507812,
+        "x9+": 25.38087399414063,
+        "x9-": 26.0547014453125
+      },
+      "sobol_radial_rays": {
+        "directions": 8192,
+        "euclidean_reach_quantiles": {
+          "0.0": 25.775437135727007,
+          "0.01": 28.67764715946817,
+          "0.1": 30.733697633972245,
+          "0.5": 32.64552330257827,
+          "0.9": 34.87758957795328,
+          "0.99": 36.37443557200804,
+          "1.0": 37.96777755816035
+        },
+        "fraction_of_box_boundary_quantiles": {
+          "0.0": 0.30860066406250003,
+          "0.01": 0.35938140625000004,
+          "0.1": 0.4062559375,
+          "0.5": 0.4882863671875,
+          "0.9": 0.5976602734375,
+          "0.99": 0.7031279687499999,
+          "1.0": 0.8242205078125
+        },
+        "maximum_absolute_coordinate_reached": [
+          28.437615625,
+          26.562634375,
+          30.781342187499998,
+          30.0001,
+          32.9688203125,
+          30.937590625,
+          27.812621874999998,
+          31.2500875,
+          26.2501375,
+          31.093839062500003
+        ]
+      }
+    },
+    "stress_points": 4787200,
+    "stress_violations": 0,
+    "tuning_box_coverage": {
+      "coverage": 0.000392913818359375,
+      "inside": 824,
+      "points": 2097152,
+      "violations": 0
+    }
+  },
+  "training_checkpoint": "provenance:training_checkpoint.pt",
+  "training_checkpoint_sha256": "0caee7e20d4aeecd42a3824d80f30ac6f922be9acbc84b0d26c187a6810e6e3a",
+  "tuning_stress_audit": "evidence/grune10d_tuning_stress.json",
+  "tuning_stress_audit_sha256": "3b71115798669e93bb0b93233cc819f4411fbf4f1bf684fe6bc92813e828d44b"
+}

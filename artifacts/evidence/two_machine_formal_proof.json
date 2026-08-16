@@ -1,0 +1,260 @@
+{
+  "all_required_queries_unsat": true,
+  "benchmark": "two_machine",
+  "bindings": {
+    "formal_preflight": {
+      "path": "frozen/two_machine/formal_preflight.json",
+      "sha256": "dd7abf55953353155dd79f6a5c501e3e25083744fdc0152d93b034c3ae1ea6c1"
+    },
+    "independent_fixed_level_screen": {
+      "path": "frozen/two_machine/independent_fixed_level_screen.json",
+      "sha256": "4fea04e5ad6c31e61d1f76004381d00a68dd09ee6f063c8d59dd377c368c677f"
+    },
+    "safe_checkpoint": {
+      "path": "frozen/two_machine/model_safe_state.pt",
+      "sha256": "c91d18180c20d913aafd50c3e057d1506841b7ea2b7bff0ba57f4d17b13bc45b"
+    },
+    "source_tuning_selection": {
+      "path": "../discounted_canonical_lambda=0.2_final/frozen_tuning_selection.json",
+      "sha256": "7e5d47fc3dfe9736b3cfdb8b753dbc7a9037449ff5e2843815b4820bf770c57f"
+    },
+    "verification_adapter": {
+      "path": "shared_candidate_handoff.py",
+      "sha256": "74c2dfe04249552dd87185e877ed83b0a2878d3d023d2bce0a65f125440de5f0"
+    },
+    "verification_freeze": {
+      "path": "frozen/frozen_verification_selection.json",
+      "sha256": "ae8934f63014443030301970dadfacc80fea1cd4cc841524a08ebd386680437c"
+    },
+    "verification_protocol": {
+      "path": "verification_protocol.json",
+      "sha256": "67452592cf891a5084326b5bc77d78aa6fa70050d578287f1573eab681f4fdde"
+    }
+  },
+  "claim": "strict Lyapunov sublevel on the complete verification box",
+  "created_utc": "2026-08-15T08:42:57.009332+00:00",
+  "dependencies": {
+    "benchmark_definitions": {
+      "path": "../../_benchmarks.py",
+      "sha256": "751725de18eecec2c5bbf3015cd92458aeab89fcabd888d150addd5d76ba8531"
+    },
+    "common_training_and_screen_pipeline": {
+      "path": "../../anchored_common_v2.py",
+      "sha256": "b6711b139345d42e2f9112e6dc854ee16d0fda0969207d7d82cd2a6619a34978"
+    },
+    "homogeneous_network_class": {
+      "path": "../../../../src/lyznet/neural_learner.py",
+      "sha256": "0ed640271403a7b8adc21220acd60f1a8bebd2c0cb8bb6803fc0dd5cdefcc455"
+    },
+    "lyznet_continuous_system": {
+      "path": "../../../../src/lyznet/core/systems.py",
+      "sha256": "97eab85fcdee81a0722da53df4bf0710293de908b091424b7b8783f213c5469a"
+    },
+    "lyznet_domain_regions": {
+      "path": "../../../../src/lyznet/core/regions.py",
+      "sha256": "cc3b9fd9acb982820b6bb46c4e50db0fcd750233a9be88ace1d1eb059580b4b2"
+    },
+    "lyznet_symbolic_conversion": {
+      "path": "../../../../src/lyznet/utils.py",
+      "sha256": "866452008218e0fe546766f154891bec0a059db545f2561c15f691f25eea2b2c"
+    },
+    "pinned_model_and_dreal_encoder": {
+      "path": "../../pinned_core.py",
+      "sha256": "cc43f4b3793163bf218fa7c7c2ae6d857c4993fa4b1498d2cde31d6828dfcb34"
+    },
+    "retained_formal_adapter": {
+      "path": "../../verify_anchored_common_v2.py",
+      "sha256": "89f8a2eb233dbfbeaa74463ccce80060ed5a7ad27c51bc6d2435e54981e6b91e"
+    },
+    "sampling_and_domain_helpers": {
+      "path": "../../_support.py",
+      "sha256": "6ff298a418e259e17c89b7b14dcb6bd2f89cfeeefea80442293bc45e1c128026"
+    },
+    "unified_verifier": {
+      "path": "../../unified.py",
+      "sha256": "8efe8e2c8b6f0befa0576690ae7bce7105379304bb10fd83fa30815b3b80b8d5"
+    },
+    "verification_adapter": {
+      "path": "shared_candidate_handoff.py",
+      "sha256": "74c2dfe04249552dd87185e877ed83b0a2878d3d023d2bce0a65f125440de5f0"
+    }
+  },
+  "environment": {
+    "dreal": "4.21.6.2",
+    "numpy": "2.2.3",
+    "platform": "Linux-5.15.0-185-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12 (main, Jun 22 2026, 18:55:27) [GCC 11.4.0]",
+    "sympy": "1.13.1",
+    "torch": "2.6.0+cu124"
+  },
+  "fixed_candidate": {
+    "bounded_level": 0.7059069747923331,
+    "correction_scale": 1.1,
+    "latent_level": 0.8789780343726676
+  },
+  "formal_enclosing_threshold": {
+    "bounded_level": 0.7059069747923332,
+    "construction": "nextafter(tanh(fixed latent level), +infinity)",
+    "contains_fixed_latent_level": true,
+    "recovered_latent_level": 0.8789780343726679
+  },
+  "local_split": {
+    "angular_diagnostic": {
+      "guarantee": "none until the complete-circle dReal query is UNSAT",
+      "maximum_log_derivative": -0.36104378024187955,
+      "minimum_log_derivative": -0.6386722567432936,
+      "minimum_observed_margin": 0.36104378024187955,
+      "points": 131072
+    },
+    "certified_component_bounds": {
+      "core_log_gradient": 389.19903570267735,
+      "correction_gradient": 54.896995466669146,
+      "dominant_vector_field": 1.4142135623730951
+    },
+    "core_margin": 0.27078283518140966,
+    "core_margin_rule": "0.75 times the sampled minimum margin",
+    "dominant_degree": 1,
+    "local_bound_passed": true,
+    "local_error_bound": 0.1633512374834859,
+    "local_error_budget": 0.20308712638605725,
+    "local_radius": 0.0006,
+    "outer_margin": 1e-05,
+    "remainder": {
+      "component_constants": [
+        0.0,
+        0.5
+      ],
+      "constant": 0.5,
+      "method": "symbolic Taylor jet plus exact-rational natural-interval bounds on derivatives of total order 2",
+      "order": 1,
+      "radius": 0.0006,
+      "taylor_degree": 1
+    }
+  },
+  "proof": {
+    "boundary_seconds": 9.337311415933073,
+    "boundary_verified": true,
+    "boundary_witness": null,
+    "core_margin": 0.27078283518140966,
+    "core_seconds": 0.23242591507732868,
+    "core_verified": true,
+    "core_witness": null,
+    "dominant_degree": 1,
+    "dreal_delta": 0.0001,
+    "dreal_jobs": 48,
+    "dreal_version": "4.21.6.2",
+    "elapsed_time": 1054.3476626679767,
+    "level": 0.7059069747923332,
+    "local_error_bound": 0.1633512374834859,
+    "local_radius": 0.0006,
+    "local_verified": true,
+    "outer_margin": 1e-05,
+    "remainder_component_constants": [
+      0.0,
+      0.5
+    ],
+    "remainder_constant": 0.5,
+    "remainder_method": "symbolic Taylor jet plus exact-rational natural-interval bounds on derivatives of total order 2",
+    "remainder_order": 1,
+    "remainder_taylor_degree": 1,
+    "shell_seconds": 1044.6563042011112,
+    "shell_verified": true,
+    "shell_witness": null,
+    "verified": true
+  },
+  "query_ledger": [
+    {
+      "elapsed_seconds": 0.2308136229403317,
+      "formula_characters": 10652,
+      "formula_path": "frozen/two_machine/formal/queries/01_homogeneous_core_unit_sphere.txt",
+      "formula_sha256": "b8f999cfbe02f78c5386c92f3841a6d2ee796f54ead32d41643b7cb8aa305180",
+      "index": 1,
+      "name": "homogeneous_core_unit_sphere",
+      "result": "unsat",
+      "started_utc": "2026-08-15T08:25:22.674036+00:00",
+      "status": "complete",
+      "witness": null
+    },
+    {
+      "elapsed_seconds": 1044.5991443230305,
+      "formula_characters": 1812168,
+      "formula_path": "frozen/two_machine/formal/queries/02_outer_shell_counterexample.txt",
+      "formula_sha256": "a60ad8132cf5a19dd57dd9641210ed849e5b51a41648865b51ab1a82ca0fb79a",
+      "index": 2,
+      "name": "outer_shell_counterexample",
+      "result": "unsat",
+      "started_utc": "2026-08-15T08:25:23.060898+00:00",
+      "status": "complete",
+      "witness": null
+    },
+    {
+      "elapsed_seconds": 2.057065053842962,
+      "formula_characters": 232178,
+      "formula_path": "frozen/two_machine/formal/queries/03_boundary_x1_lower.txt",
+      "formula_sha256": "eedbf36db1b70fd981cd3309403c48a5318354d0119e2f1fe9166d8b8b24bb61",
+      "index": 3,
+      "name": "boundary_x1_lower",
+      "result": "unsat",
+      "started_utc": "2026-08-15T08:42:47.679170+00:00",
+      "status": "complete",
+      "witness": null
+    },
+    {
+      "elapsed_seconds": 2.6310271471738815,
+      "formula_characters": 232177,
+      "formula_path": "frozen/two_machine/formal/queries/04_boundary_x1_upper.txt",
+      "formula_sha256": "cf808c104063a46c79b16422017e4d97ae7bfebce2f0788f8b677ed729e0b700",
+      "index": 4,
+      "name": "boundary_x1_upper",
+      "result": "unsat",
+      "started_utc": "2026-08-15T08:42:49.741656+00:00",
+      "status": "complete",
+      "witness": null
+    },
+    {
+      "elapsed_seconds": 2.8420192489866167,
+      "formula_characters": 232178,
+      "formula_path": "frozen/two_machine/formal/queries/05_boundary_x2_lower.txt",
+      "formula_sha256": "1d11b888537c2b29143c5f923aec743bc8a844612a13c4cab5fa7600cd75c221",
+      "index": 5,
+      "name": "boundary_x2_lower",
+      "result": "unsat",
+      "started_utc": "2026-08-15T08:42:52.378109+00:00",
+      "status": "complete",
+      "witness": null
+    },
+    {
+      "elapsed_seconds": 1.7729820341337472,
+      "formula_characters": 232179,
+      "formula_path": "frozen/two_machine/formal/queries/06_boundary_x2_upper.txt",
+      "formula_sha256": "5a0d214fc8d3d9123016c41f1e80fbcee18fd11ac35962861f7930e5600c0ee0",
+      "index": 6,
+      "name": "boundary_x2_upper",
+      "result": "unsat",
+      "started_utc": "2026-08-15T08:42:55.225422+00:00",
+      "status": "complete",
+      "witness": null
+    }
+  ],
+  "schema": "discounted-canonical-dreal-proof-v1",
+  "solver_settings": {
+    "acceptance": "all six formulas return UNSAT and the composed verifier reports verified=true",
+    "delta": 0.0001,
+    "dreal_version": "4.21.6.2",
+    "external_watchdog": "must be supplied by the invoking process",
+    "external_watchdog_seconds_per_candidate": 3600,
+    "jobs": 48,
+    "outer_scaled_log_derivative_margin": 1e-05,
+    "required_queries": [
+      "homogeneous_core_unit_sphere",
+      "outer_shell_counterexample",
+      "boundary_x1_lower",
+      "boundary_x1_upper",
+      "boundary_x2_lower",
+      "boundary_x2_upper"
+    ],
+    "use_local_optimization": true,
+    "use_polytope_in_forall": true
+  },
+  "verified": true
+}

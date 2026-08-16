@@ -1,0 +1,180 @@
+{
+  "binding": {
+    "checkpoint": "weights/grune10d.pt",
+    "checkpoint_sha256": "48f83bbb08aac5c8cc277ca0f69e69442084d50e562fdf2a0cb4028ffe9d6d47",
+    "driver": "provenance:homogeneous_10d_pipeline.py",
+    "driver_sha256": "76e0221ec0c5e55c6755898de9b3a61d72f7ee0914638f21fbb8c329df4c8639",
+    "evaluator": "provenance:evaluate_frozen.py",
+    "evaluator_sha256": "9dfac766fede2aa6134b7b191f027bd40f23cd4ced641960809e01344e98899d",
+    "frozen_before_evaluation": true,
+    "selection": "evidence/grune10d_frozen_selection.json",
+    "selection_sha256": "f909ec6d4e1e216e67fa767c91dd1506c46fde516c18701bb479e5d39ca4eb6d"
+  },
+  "boundary_faces": {
+    "inside_or_touching_selected_sublevel": 0,
+    "minimum_H": 0.7826555371188072,
+    "nonfinite_H": 0,
+    "points": 327680,
+    "sampled_separation": 0.36426002722979933,
+    "selected_level": 0.41839550988900787
+  },
+  "candidate": {
+    "bounded_level": 0.39557787511302517,
+    "core_degree": 2,
+    "core_kind": "homogeneous_tanh",
+    "core_width": 64,
+    "correction_depth": 3,
+    "correction_gain": 0.75,
+    "correction_width": 256,
+    "domain": [
+      [
+        -40.0,
+        40.0
+      ],
+      [
+        -40.0,
+        40.0
+      ],
+      [
+        -40.0,
+        40.0
+      ],
+      [
+        -40.0,
+        40.0
+      ],
+      [
+        -40.0,
+        40.0
+      ],
+      [
+        -40.0,
+        40.0
+      ],
+      [
+        -40.0,
+        40.0
+      ],
+      [
+        -40.0,
+        40.0
+      ],
+      [
+        -40.0,
+        40.0
+      ],
+      [
+        -40.0,
+        40.0
+      ]
+    ],
+    "latent_level": 0.41839550988900787
+  },
+  "claim_scope": "fixed post-selection empirical evaluation; not formal verification",
+  "failures": [],
+  "homogeneous_core_sphere": {
+    "directions": 262144,
+    "maximum_DlogV_F": -1.8413040278514257,
+    "minimum_DlogV_F": -2.1274846043019773,
+    "nonfinite_or_nonpositive_count": 0,
+    "nonnegative_ratio_count": 0
+  },
+  "passed": true,
+  "populations": {
+    "iid_radial_full_10d": {
+      "coverage": 0.5001611709594727,
+      "inside": 524457,
+      "maximum_LfH_inside": -3.133296075024329e-13,
+      "maximum_absolute_coordinate_inside": [
+        27.707820877640316,
+        26.911581092539745,
+        31.81687368396856,
+        29.66931845415595,
+        32.19746814199238,
+        31.76096872000818,
+        27.20233612324648,
+        30.292092589409826,
+        25.734259452142815,
+        30.181066961569236
+      ],
+      "maximum_phi_inside": -0.42240782992567827,
+      "minimum_positive_H": 1.5803860745376393e-13,
+      "nonfinite_H": 0,
+      "nonfinite_phi": 0,
+      "points": 1048576,
+      "robust_phi_margin_violations_inside": 0,
+      "strict_decrease_violations_inside": 0,
+      "zero_robust_violation_95pct_upper_bound_conditional_on_inside": 5.712048304573614e-06,
+      "zero_strict_violation_95pct_upper_bound_conditional_on_inside": 5.712048304573614e-06
+    },
+    "near_origin_log_radial": {
+      "coverage": 1.0,
+      "inside": 262144,
+      "maximum_LfH_inside": -5.637141290832179e-24,
+      "maximum_absolute_coordinate_inside": [
+        0.8177894004811225,
+        0.8446868320093553,
+        0.8258166334840483,
+        0.8288682481569842,
+        0.8409998923306002,
+        0.8538603240128129,
+        0.8770945500455776,
+        0.8624138611541035,
+        0.7935635921903909,
+        0.7925429724694439
+      ],
+      "maximum_phi_inside": -1.8459860329059934,
+      "minimum_positive_H": 2.8145548062936678e-24,
+      "nonfinite_H": 0,
+      "nonfinite_phi": 0,
+      "points": 262144,
+      "robust_phi_margin_violations_inside": 0,
+      "strict_decrease_violations_inside": 0,
+      "zero_robust_violation_95pct_upper_bound_conditional_on_inside": 1.1427746415271223e-05,
+      "zero_strict_violation_95pct_upper_bound_conditional_on_inside": 1.1427746415271223e-05
+    },
+    "uniform_sobol_box": {
+      "coverage": 0.00039386749267578125,
+      "inside": 413,
+      "maximum_LfH_inside": -0.2797825544972449,
+      "maximum_absolute_coordinate_inside": [
+        21.556963548064232,
+        22.57956251502037,
+        27.58756384253502,
+        24.50956143438816,
+        30.00382475554943,
+        26.083470061421394,
+        23.55025105178356,
+        28.867606967687607,
+        23.564482256770134,
+        24.60090972483158
+      ],
+      "maximum_phi_inside": -0.9825606855261784,
+      "minimum_positive_H": 0.10290658416942562,
+      "nonfinite_H": 0,
+      "nonfinite_phi": 0,
+      "points": 1048576,
+      "robust_phi_margin_violations_inside": 0,
+      "strict_decrease_violations_inside": 0,
+      "zero_robust_violation_95pct_upper_bound_conditional_on_inside": 0.0072273452553147655,
+      "zero_strict_violation_95pct_upper_bound_conditional_on_inside": 0.0072273452553147655
+    }
+  },
+  "protocol": {
+    "batch_size": 131072,
+    "device": "cuda",
+    "dtype": "torch.float64",
+    "iid_radial_proposal": "Gaussian directions normalized in infinity norm, multiplied by an independent uniform radial fraction in [0,1]",
+    "phi_margin": -0.01,
+    "seed_policy": "202621* seeds were reserved until checkpoint, correction gain, and level were frozen",
+    "seeds": {
+      "boundary_faces": 20262113,
+      "core_sphere": 20262115,
+      "iid_radial": 20262111,
+      "near_origin": 20262114,
+      "uniform_box": 20262112
+    }
+  },
+  "schema": "grune10d-homogeneous-independent-evaluation-v1",
+  "wall_seconds": 1.2320213520433754
+}
