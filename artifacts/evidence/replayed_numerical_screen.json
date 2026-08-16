@@ -7,12 +7,12 @@
       "inside": 209445,
       "margin": 0.01,
       "margin_violations_inside": 0,
-      "maximum_scaled_log_derivative_inside": -0.1700441698554006,
+      "maximum_scaled_log_derivative_inside": -0.17004416985540186,
       "nonfinite_evaluations": 0,
       "points": 1048576,
       "sampled_boundary": {
         "contained": true,
-        "minimum_H": 0.041993574323811324,
+        "minimum_H": 0.04199357432381167,
         "points": 65536,
         "points_inside_or_on_level": 0
       },
@@ -26,13 +26,26 @@
       "inside": 524457,
       "margin": 0.01,
       "margin_violations_inside": 0,
-      "maximum_scaled_log_derivative_inside": -0.42240782992567794,
+      "maximum_scaled_log_derivative_inside": -0.422407829925678,
+      "near_origin_log_radial": {
+        "coverage": 1.0,
+        "inside": 262144,
+        "margin": 0.01,
+        "margin_violations_inside": 0,
+        "maximum_radius": 1.0,
+        "maximum_scaled_log_derivative_inside": -1.8459860329059938,
+        "minimum_radius": 1e-10,
+        "nonfinite_evaluations": 0,
+        "points": 262144,
+        "proposal": "Gaussian directions normalized in Euclidean norm; radius uniform on a logarithmic scale",
+        "strict_violations_inside": 0
+      },
       "nonfinite_evaluations": 0,
       "points": 1048576,
       "proposal": "IID Gaussian directions normalized in infinity norm; uniform radial fraction",
       "sampled_boundary": {
         "contained": true,
-        "minimum_H": 0.6187240695696546,
+        "minimum_H": 0.6187240695696535,
         "points": 262144,
         "points_inside_or_on_level": 0
       },
@@ -45,19 +58,19 @@
       "inside": 344443,
       "margin": 0.01,
       "margin_violations_inside": 0,
-      "maximum_scaled_log_derivative_inside": -0.017951638780678625,
+      "maximum_scaled_log_derivative_inside": -0.01795163878067818,
       "nonfinite_evaluations": 0,
       "points": 1048576,
       "sampled_boundary": {
         "contained": true,
-        "minimum_H": 0.8946836001440477,
+        "minimum_H": 0.8946836001440496,
         "points": 65536,
         "points_inside_or_on_level": 0
       },
       "strict_violations_inside": 0
     }
   },
-  "device": "cuda:0",
+  "device": "cpu",
   "profile": "paper",
   "schema": "frozen-candidate-numerical-screen-v1"
 }

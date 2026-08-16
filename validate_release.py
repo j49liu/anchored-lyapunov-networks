@@ -293,6 +293,16 @@ def validate_replayed_screen(manifest: dict):
         assert result["nonfinite_evaluations"] == 0
         assert result["sampled_boundary"]["contained"]
         assert result["sampled_boundary"]["points_inside_or_on_level"] == 0
+        if name == "grune10d":
+            near_origin = result["near_origin_log_radial"]
+            assert near_origin["points"] == 2**18
+            assert near_origin["coverage"] == 1.0
+            assert near_origin["minimum_radius"] == 1e-10
+            assert near_origin["maximum_radius"] == 1.0
+            assert near_origin["margin_violations_inside"] == 0
+            assert near_origin["strict_violations_inside"] == 0
+            assert near_origin["nonfinite_evaluations"] == 0
+            assert near_origin["maximum_scaled_log_derivative_inside"] < -0.01
         expected_coverage = (
             candidate["iid_radial_coverage"]
             if name == "grune10d"

@@ -119,6 +119,22 @@ def iid_radial_points(count: int, radius: float, seed: int):
     return float(radius) * radial * directions
 
 
+def logarithmic_radial_points(
+    count: int, minimum_radius: float, maximum_radius: float, seed: int
+):
+    """Sample directions uniformly and radii uniformly on a logarithmic scale."""
+
+    generator = torch.Generator(device="cpu").manual_seed(int(seed))
+    directions = torch.randn((count, 10), generator=generator, dtype=torch.float64)
+    directions /= torch.linalg.vector_norm(directions, dim=1, keepdim=True)
+    unit = torch.rand((count, 1), generator=generator, dtype=torch.float64)
+    radii = torch.exp(
+        math.log(float(minimum_radius))
+        + unit * math.log(float(maximum_radius) / float(minimum_radius))
+    )
+    return radii * directions
+
+
 def grune_boundary(count: int, radius: float, seed: int):
     if count < 20:
         raise ValueError("the boundary screen must include all 20 face centers")
@@ -142,6 +158,7 @@ def grune_screen(profile, device, batch_size):
     model = load_candidate("grune10d")
     points = 2**20 if profile == "paper" else 2**14
     boundary_points = 2**18 if profile == "paper" else 4096
+    near_origin_points = 2**18 if profile == "paper" else 2**13
     # This seed was reserved until the homogeneous-core checkpoint, gain,
     # and level were frozen.  It matches the retained independent evaluation.
     population = iid_radial_points(points, 40.0, 20262111)
@@ -153,6 +170,21 @@ def grune_screen(profile, device, batch_size):
         batch_size=batch_size,
         margin=0.01,
     )
+    near_origin = evaluate_batches(
+        "grune10d",
+        model,
+        logarithmic_radial_points(
+            near_origin_points, 1e-10, 1.0, 20262114
+        ),
+        device=device,
+        batch_size=batch_size,
+        margin=0.01,
+    )
+    near_origin["minimum_radius"] = 1e-10
+    near_origin["maximum_radius"] = 1.0
+    near_origin["proposal"] = (
+        "Gaussian directions normalized in Euclidean norm; radius uniform on a logarithmic scale"
+    )
     boundary = grune_boundary(boundary_points, 40.0, 20262113)
     model = model.to(device=device, dtype=torch.float64)
     minimum = math.inf
@@ -163,6 +195,7 @@ def grune_screen(profile, device, batch_size):
             minimum = min(minimum, float(values.min()))
             inside_boundary += int((values <= model.latent_level).sum())
     result["proposal"] = "IID Gaussian directions normalized in infinity norm; uniform radial fraction"
+    result["near_origin_log_radial"] = near_origin
     result["sampled_boundary"] = {
         "points": len(boundary),
         "minimum_H": minimum,
