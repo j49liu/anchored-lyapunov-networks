@@ -222,7 +222,7 @@ def draw_level_panel(
     axis.set_aspect("equal", adjustable="box")
     level_kind = "Tested" if metadata["name"] == "grune10d" else "Verified"
     axis.set_title(
-        f"{spec['display']}\n{level_kind} level set", color=TEXT, pad=8
+        f"{spec['display']}\n{level_kind} sublevel set", color=TEXT, pad=8
     )
     axis.grid(color=GRID, linewidth=0.45, alpha=0.38)
     axis.set_axisbelow(True)
