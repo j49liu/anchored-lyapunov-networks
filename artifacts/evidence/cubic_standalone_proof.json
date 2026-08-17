@@ -35,9 +35,11 @@
     "scaled_dynamics_remainder_at_rho": 1.6000000006400005e-09,
     "strict_margin_eta_minus_beta": 0.04440311921816287
   },
+  "outer_query_phi_multiplier": 20,
+  "outer_query_scaled_margin": 0.00020000000000000004,
   "queries": [
     {
-      "elapsed_seconds": 0.3237327351234853,
+      "elapsed_seconds": 0.1816838518716395,
       "formula_characters": 11372,
       "formula_sha256": "a483a1339021418c66c6d1ea28d6ea78791684f5be8199cd234fa31392840cee",
       "index": 1,
@@ -46,16 +48,16 @@
       "status": "complete"
     },
     {
-      "elapsed_seconds": 288.92987631703727,
-      "formula_characters": 1862783,
-      "formula_sha256": "40eab5610117803e972b5a6e261066bc519ae0980d91279c2416bcc1908874f0",
+      "elapsed_seconds": 333.3622237809468,
+      "formula_characters": 1862459,
+      "formula_sha256": "3093ee9767eb6538297eddf914d3246ba040c0ac85eb1f8c7d203d5d017bda2b",
       "index": 2,
       "name": "outer_shell_counterexample",
       "result": "unsat",
       "status": "complete"
     },
     {
-      "elapsed_seconds": 3.011107977014035,
+      "elapsed_seconds": 2.9885460769291967,
       "formula_characters": 235538,
       "formula_sha256": "04626b87828c07603f230d84303816f42fa9414fc40067d9695ace8bed9e52fb",
       "index": 3,
@@ -64,7 +66,7 @@
       "status": "complete"
     },
     {
-      "elapsed_seconds": 3.2251429988536984,
+      "elapsed_seconds": 3.4304467821493745,
       "formula_characters": 235537,
       "formula_sha256": "f9d31ae3266319e8e87d59833271f5b5309fdf4ee7cbea8673c39d698245d754",
       "index": 4,
@@ -73,7 +75,7 @@
       "status": "complete"
     },
     {
-      "elapsed_seconds": 3.1719404028262943,
+      "elapsed_seconds": 3.2437469528522342,
       "formula_characters": 235538,
       "formula_sha256": "945a9d5200cae64e5dad47026efa448db5223b56e1b866b184de662343d6a88c",
       "index": 5,
@@ -82,7 +84,7 @@
       "status": "complete"
     },
     {
-      "elapsed_seconds": 3.0394049489405006,
+      "elapsed_seconds": 2.9865777930244803,
       "formula_characters": 235537,
       "formula_sha256": "855b09295a355e0cd53b0fef04e8d26d17dac8c1a122fb049ae05a54c880f35d",
       "index": 6,
@@ -94,12 +96,13 @@
   "schema": "standalone-planar-dreal-proof-v1",
   "solver": {
     "backend": "dreal",
-    "elapsed_seconds": 301.7016936291475,
+    "elapsed_seconds": 346.19348328211345,
     "jobs": 48,
     "precision": 0.0001,
     "use_local_optimization": true,
     "use_polytope_in_forall": true,
     "version": "4.21.6.2"
   },
+  "system_constants_encoded_exactly": true,
   "verified": true
 }

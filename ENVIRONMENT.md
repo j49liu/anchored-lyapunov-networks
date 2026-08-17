@@ -7,16 +7,16 @@ The frozen artifact was replayed on:
 - 1 TiB RAM;
 - four NVIDIA H100 NVL GPUs;
 - Python 3.10.12;
-- NumPy 2.2.3, SciPy 1.15.2, PyTorch 2.6.0+cu124, and Matplotlib 3.10.0;
+- NumPy 2.2.3, SciPy 1.15.2, PyTorch 2.6.0+cu124, Matplotlib 3.10.0,
+  and FontTools 4.57.0;
 - dReal 4.21.6.2 at precision `1e-4`, with polytope-for-forall and local
   optimization enabled.
 
-The reported standalone formal replays used CPU execution and were launched
-concurrently.  The two-machine
-run used 32 dReal jobs and took 1223.86 seconds in total; the cubic run used
-48 jobs and took 301.70 seconds.  The corresponding outer-shell queries took
-1215.73 and 288.93 seconds.  These are hardware- and load-dependent timing
-observations, not part of the certificate.
+The reported exact-system standalone formal replays used CPU execution, were
+launched concurrently, and used 48 dReal jobs each. The two-machine and cubic
+runs took 1044.80 and 346.19 seconds in total, respectively. The corresponding
+outer-shell queries took 1035.00 and 333.36 seconds. These are hardware- and
+load-dependent timing observations, not part of the certificate.
 
 The bundled paper-profile numerical replay was run on a GPU; an independent
 CPU replay exactly recovered its coverages and zero-violation counts. CUDA is
@@ -49,6 +49,9 @@ Run `verify_planar_crown.py` from this repository after activating the same
 environment. These verification scripts use CROWN bound propagation followed
 by exhaustive adaptive input subdivision; they do not use MIP, GCP-CROWN, or
 β-CROWN activation branching, so no commercial solver license is needed.
+The retained CROWN runs use float32 without a proved roundoff envelope and are
+therefore corroborating evidence; the dReal `UNSAT` runs are the
+real-arithmetic formal certificates.
 
 The retained GPU CROWN verification portions took 20.32 seconds for the
 two-machine candidate and 53.42 seconds for the cubic-core candidate. The

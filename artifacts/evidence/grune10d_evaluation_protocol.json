@@ -4,7 +4,7 @@
   "evidence": {
     "grune10d_evaluation.json": {
       "path": "evidence/grune10d_evaluation.json",
-      "sha256": "7aee5cdfc8101851f5a2a03ef1377fc97430347a054d10eac83087beb4452769"
+      "sha256": "94cd149195de7467fb45d84333bd6a1502cba07b341bad27e768c21cd93890e6"
     },
     "grune10d_frozen_selection.json": {
       "path": "evidence/grune10d_frozen_selection.json",

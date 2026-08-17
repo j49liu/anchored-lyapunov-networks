@@ -4,15 +4,15 @@ This lightweight artifact accompanies *Universal Approximation of Maximal
 Lyapunov Functions with Anchored Neural Networks*. It contains three frozen
 candidates and no training code:
 
-- two planar candidates with independent dReal and GPU CROWN verification
-  scripts; and
+- two planar candidates with dReal formal certificates and corroborating GPU
+  CROWN bound-propagation scripts; and
 - one 10D candidate with a homogeneous neural anchor and retained empirical
   stress tests.
 
-The artifact reproduces candidate evaluation, numerical screens, plots, and
-formal verification from frozen weights.  It does **not** claim to reproduce
-checkpoint training.  Candidate generation is not a contribution of the
-paper.
+The artifact reproduces candidate evaluation, numerical screens, plots, dReal
+formal verification, and CROWN corroboration from frozen weights.  It does
+**not** claim to reproduce checkpoint training.  Candidate generation is not a
+contribution of the paper.
 
 The frozen candidates were trained using an experimental version of
 [LyZNet](https://doi.org/10.1145/3641513.3650134).
@@ -53,6 +53,8 @@ timeout 3600s python verify_planar.py cubic --jobs 48 \
 Each formal run checks one complete unit-sphere obligation, one outer-shell
 obligation, and the four faces of the verification box.  A candidate passes
 only when every query is `UNSAT` and the analytic local bound closes.
+The exact paper dynamics are encoded using symbolic `sqrt(3)` for the swing
+system and denominator clearing for the cubic system.
 The bundled standalone dReal records satisfy all six queries for both planar
 candidates. dReal has no native per-query watchdog in this interface;
 the `timeout` wrapper above fails externally if a candidate exceeds one hour.
@@ -66,10 +68,14 @@ python verify_planar_crown.py cubic --device cuda \
   --output runs/cubic_gpu_crown.json
 ```
 
-This second verifier uses certified CROWN bounds from the α,β-CROWN software
-and exhaustive adaptive subdivision of the input domain. It does not invoke
+This second verifier uses CROWN bounds from the α,β-CROWN software and
+exhaustive adaptive subdivision of the input domain. It does not invoke
 β-CROWN activation branching. A run succeeds only when every terminal tile is
-certified; an unresolved tile, resource limit, or backend error fails closed.
+resolved; an unresolved tile, resource limit, or backend error fails closed.
+Because the retained run uses a float32 backend without a proved roundoff
+envelope, it is corroborating bound-propagation evidence rather than an
+independent real-arithmetic formal certificate; the dReal `UNSAT` records
+provide the formal certificates.
 The analytic local bound handles a ball around the origin, where the scaled
 polar expression has a removable singularity.
 
@@ -94,9 +100,13 @@ why the sampling measure must be stated in ten dimensions.
 
 | Candidate | Method | Fixed bounded level | Independent evidence |
 |---|---|---:|---|
-| Example VI.1 (two-machine system) | homogeneous neural anchor | `0.705906975` | 32.8486%, formally verified |
-| Example VI.2 (cubic-core system) | homogeneous neural anchor | `0.041549706` | 19.9742%, formally verified |
-| Example VI.3 (10D system) | homogeneous neural anchor | `0.395577875` | 50.0161% IID-radial, empirical |
+| Example VI.1 (two-machine system) | homogeneous neural anchor | `0.7059069747923331` | 32.8486%, formally verified |
+| Example VI.2 (cubic-core system) | homogeneous neural anchor | `0.04154970550507081` | 19.9742%, formally verified |
+| Example VI.3 (10D system) | homogeneous neural anchor | `0.39557787511302517` | 50.0161% IID-radial, empirical |
+
+The figure contours use the levels rounded downward to four significant
+digits, as displayed in their legends; the table lists the exact frozen
+levels used by verification and screening.
 
 The `.npz` files are the portable public representation used by evaluation,
 plotting, and formal verification.  The original `weights_only=True` PyTorch

@@ -31,7 +31,7 @@
     "portable_weights": "artifacts/weights/two_machine.npz",
     "portable_weights_sha256": "ec855f7e34bfdad7163c79d0d81568fed84b330e76068b3aafef0ef5b9377083"
   },
-  "claim": "strict Lyapunov sublevel on the complete verification box",
+  "claim": "CROWN corroboration of the strict Lyapunov sublevel on the complete box",
   "hardware": {
     "cuda": "12.4",
     "device": "cuda",
@@ -55,11 +55,11 @@
     "failure_policy": "fail closed on any unresolved tile or backend error",
     "proof_margin": 1e-06,
     "proved_properties": {
-      "boundary": "H(x) > c + proof_margin on every face of D",
-      "core": "q_p(u)^T f_d(u) < -(eta + proof_margin) for every ||u||=1",
+      "boundary": "H(x) >= gamma + proof_margin on every face of D",
+      "core": "q_p(u) f_d(u) < -(eta + proof_margin) for every ||u||=1",
       "coverage": "the inner square is contained in B_rho; its four-rectangle complement and the inner square cover the complete box D",
       "local": "the analytic beta bound satisfies beta < eta on ||x|| <= rho",
-      "outer": "H(x) <= c implies Phi(x) < -(outer_margin + proof_margin) on D outside the inner square"
+      "outer": "H(x) <= gamma implies Phi(x) < -(outer_margin + proof_margin) on D outside the inner square"
     },
     "settings": {
       "batch_size": 512,
@@ -72,7 +72,8 @@
     "software": "alpha-beta-CROWN",
     "software_commit": "6b8bbcfac1c01da1cabd240a87e4dce1a65f5a2b",
     "software_version": "0.7.0",
-    "stopping_criterion": "every terminal tile has a certified CROWN lower bound above the corresponding strengthened specification threshold"
+    "stopping_criterion": "every terminal tile has a CROWN lower bound above the corresponding strengthened specification threshold",
+    "trust_scope": "float32 backend without a proved roundoff envelope; corroborating evidence rather than a real-arithmetic formal certificate"
   },
   "obligations": [
     {

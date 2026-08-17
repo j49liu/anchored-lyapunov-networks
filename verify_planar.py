@@ -9,7 +9,7 @@ For ``x = r u``, ``||u|| = 1``, define
 
     Phi(r, u) = r**(1-d) D log(H)(r u) f(r u),
 
-where ``d`` is the dominant degree.  The proof has two overlapping pieces:
+where ``d`` is the dominant degree.  The proof has three overlapping pieces:
 
 1. dReal excludes a violation of ``Phi(0, u) < -eta`` on the unit circle.
 2. An analytic bound ``|Phi(r,u)-Phi(0,u)| <= beta < eta`` covers
@@ -21,6 +21,10 @@ Every solver obligation is a counterexample query.  A certificate is accepted
 only if the analytic inequality closes and all six queries return ``UNSAT``.
 Any exception, ``delta-sat`` result, missing query, or malformed artifact is a
 failure rather than an inconclusive success.
+
+The paper's system constants are encoded exactly: the swing query uses the
+symbolic expression ``sqrt(3)``, and the cubic query clears the denominators
+5 and 20 by multiplying the scaled dynamics by 20.
 """
 
 from __future__ import annotations
@@ -339,7 +343,7 @@ def analytic_local_bound(candidate: Candidate) -> dict:
         remainder_description = "||E(r,u)|| <= r/2"
     else:
         # The complete noncubic part is
-        #   [.2 r^2 A(r,u) + .05 r^4 B(r,u)] u
+        #   [(1/5) r^2 A(r,u) + (1/20) r^4 B(r,u)] u
         # after division by r^3.  Both A and B lie in [1,5], so its norm is
         # at most r^2 (1 + r^2/4).
         epsilon = rho**2 * (1 + rho**2 / 4)
@@ -429,39 +433,48 @@ def dominant_dynamics(candidate: Candidate, unit):
 
 
 def scaled_full_dynamics(candidate: Candidate, dreal, radius, unit):
-    """Return ``f(r*u)/r^d`` without removable symbolic singularities."""
+    """Return an integer multiple of ``f(r*u)/r^d`` and its multiplier."""
 
     u1, u2 = unit
     if candidate.name == "two_machine":
-        return (
+        angle = radius * u1
+        flow = (
             u2,
             (
                 -0.5 * radius * u2
-                - dreal.sin(radius * u1 + math.pi / 3.0)
-                + math.sqrt(3.0) / 2.0
+                - 0.5 * dreal.sin(angle)
+                - 0.5
+                * dreal.sqrt(dreal.Expression(3.0))
+                * (dreal.cos(angle) - 1.0)
             )
             / radius,
         )
+        return flow, 1
 
     leading1, leading2 = dominant_dynamics(candidate, unit)
     angle1 = radius * u1
     angle2 = radius * u2
-    degree_five = 0.2 * radius**2 * (
-        3.0 + dreal.sin(angle1) + dreal.cos(angle2)
-    )
-    degree_seven = 0.05 * radius**4 * (
+    degree_five_shape = 3.0 + dreal.sin(angle1) + dreal.cos(angle2)
+    degree_seven_shape = (
         3.0
         + dreal.cos(angle1 + angle2)
         + dreal.sin(angle1 - angle2)
     )
-    modulation = degree_five + degree_seven
-    return leading1 + modulation * u1, leading2 + modulation * u2
+    modulation_times_twenty = (
+        4.0 * radius**2 * degree_five_shape
+        + radius**4 * degree_seven_shape
+    )
+    flow_times_twenty = (
+        20.0 * leading1 + modulation_times_twenty * u1,
+        20.0 * leading2 + modulation_times_twenty * u2,
+    )
+    return flow_times_twenty, 20
 
 
 def log_level_expression(candidate: Candidate, dreal):
     """Outward-enclose the frozen bounded level in solver arithmetic."""
 
-    bounded = math.tanh(float(candidate.metadata["latent_level"]))
+    bounded = float(candidate.metadata["bounded_level"])
     enclosing = math.nextafter(bounded, 1.0)
     level = dreal.Expression(enclosing)
     one = dreal.Expression(1.0)
@@ -481,7 +494,9 @@ def maximum_box_radius(domain) -> float:
     return _upper_sqrt(squared)
 
 
-def build_queries(candidate: Candidate, dreal) -> tuple[list[Query], float]:
+def build_queries(
+    candidate: Candidate, dreal
+) -> tuple[list[Query], float, int, float]:
     """Construct the six counterexample formulas used by the certificate."""
 
     # Query 1: the homogeneous core on the complete unit circle.
@@ -520,7 +535,9 @@ def build_queries(candidate: Candidate, dreal) -> tuple[list[Query], float]:
     )
     full_shape = core_log_shape(candidate, dreal, unit) + correction
     log_latent = candidate.core_degree * dreal.log(radius) + full_shape
-    scaled_flow = scaled_full_dynamics(candidate, dreal, radius, unit)
+    scaled_flow, phi_multiplier = scaled_full_dynamics(
+        candidate, dreal, radius, unit
+    )
     radial_rate = sum(u * f for u, f in zip(unit, scaled_flow))
     tangent = tuple(f - u * radial_rate for u, f in zip(unit, scaled_flow))
     ratio = candidate.core_degree * radial_rate
@@ -543,7 +560,10 @@ def build_queries(candidate: Candidate, dreal) -> tuple[list[Query], float]:
     shell = dreal.logical_and(sphere, radial, box)
     log_level, enclosing_level = log_level_expression(candidate, dreal)
     selected = log_latent <= log_level
-    decrease_bad = ratio >= -candidate.outer_margin
+    scaled_outer_margin = _upper_float(
+        Fraction(phi_multiplier) * Fraction.from_float(candidate.outer_margin)
+    )
+    decrease_bad = ratio >= -scaled_outer_margin
     queries = [
         Query("homogeneous_core_unit_sphere", core_bad),
         Query(
@@ -568,7 +588,7 @@ def build_queries(candidate: Candidate, dreal) -> tuple[list[Query], float]:
         )
     if len(queries) != 6:
         raise RuntimeError("internal error: expected exactly six queries")
-    return queries, enclosing_level
+    return queries, enclosing_level, phi_multiplier, scaled_outer_margin
 
 
 def query_records(queries: list[Query], dump_directory: Path | None) -> list[dict]:
@@ -712,7 +732,9 @@ def main() -> int:
             "dReal Python bindings are required to construct formal queries"
         ) from error
 
-    queries, enclosing_level = build_queries(candidate, dreal)
+    queries, enclosing_level, phi_multiplier, scaled_outer_margin = build_queries(
+        candidate, dreal
+    )
     records = query_records(queries, args.dump_queries)
     started = perf_counter()
     all_unsat = False
@@ -733,6 +755,9 @@ def main() -> int:
         "dry_run": bool(args.dry_run),
         "verified": verified,
         "all_required_queries_unsat": bool(all_unsat),
+        "system_constants_encoded_exactly": True,
+        "outer_query_phi_multiplier": phi_multiplier,
+        "outer_query_scaled_margin": scaled_outer_margin,
         "candidate_artifact": {
             "manifest": release_path(candidate.manifest_path),
             "portable_weights": release_path(candidate.weights_path),

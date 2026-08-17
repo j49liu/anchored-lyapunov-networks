@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""GPU CROWN replay for the two frozen planar Lyapunov certificates.
+"""GPU CROWN corroboration for the two frozen planar Lyapunov certificates.
 
 The script uses the public Python API from the alpha-beta-CROWN repository,
-but it does not depend on LyZNet or on training code.  It proves four facts:
+but it does not depend on LyZNet or on training code.  It checks four facts:
 
 1. the homogeneous core decreases on the complete unit circle;
 2. the retained analytic perturbation bound closes on ``||x|| <= rho``;
@@ -19,9 +19,11 @@ subdivision:
 * an inner square is chosen strictly inside the analytic local ball; and
 * four rectangles cover the complement of that square in the box.
 
-Every terminal tile is accepted only when a certified CROWN lower bound
+Every terminal tile is accepted only when its CROWN lower bound
 proves at least one disjunct of the desired implication.  Unresolved tiles are
 bisected and checked again.  Hitting any resource limit fails closed.
+The retained backend uses float32 without a proved roundoff envelope, so this
+run corroborates rather than replaces the real-arithmetic dReal certificate.
 """
 
 from __future__ import annotations
@@ -108,7 +110,7 @@ class TileFamily:
 
 
 class FrozenPlanarGraph(nn.Module):
-    """Shared exact expressions for one frozen planar candidate."""
+    """Shared frozen float32 expressions for one planar candidate."""
 
     def __init__(self, candidate):
         super().__init__()
@@ -165,7 +167,7 @@ class FrozenPlanarGraph(nn.Module):
         return log_shape, q1, q2
 
     def correction_terms(self, x1, x2):
-        """Return the anchored correction and its exact spatial gradient."""
+        """Return the anchored correction and its frozen float32 gradient."""
 
         states = torch.cat((x1, x2), dim=1)
         scale = self.candidate.input_scale.reshape(-1)[0]
@@ -787,7 +789,8 @@ def verify_candidate(args):
         "candidate": args.candidate,
         "verified": verified,
         "claim": (
-            "strict Lyapunov sublevel on the complete verification box"
+            "CROWN corroboration of the strict Lyapunov sublevel on the "
+            "complete box"
             if verified
             else "GPU CROWN verification failed or was inconclusive"
         ),
@@ -807,9 +810,13 @@ def verify_candidate(args):
             "bound_method": "CROWN",
             "complete_verifier": "exhaustive adaptive input subdivision",
             "dtype": "float32",
+            "trust_scope": (
+                "float32 backend without a proved roundoff envelope; "
+                "corroborating evidence rather than a real-arithmetic formal certificate"
+            ),
             "proof_margin": proof_margin,
             "stopping_criterion": (
-                "every terminal tile has a certified CROWN lower bound above "
+                "every terminal tile has a CROWN lower bound above "
                 "the corresponding strengthened specification threshold"
             ),
             "failure_policy": "fail closed on any unresolved tile or backend error",
@@ -822,13 +829,17 @@ def verify_candidate(args):
                 "maximum_tiles_per_round": args.maximum_tiles,
             },
             "proved_properties": {
-                "core": "q_p(u)^T f_d(u) < -(eta + proof_margin) for every ||u||=1",
-                "local": "the analytic beta bound satisfies beta < eta on ||x|| <= rho",
+                "core": (
+                    "q_p(u) f_d(u) < -(eta + proof_margin) for every ||u||=1"
+                ),
+                "local": (
+                    "the analytic beta bound satisfies beta < eta on ||x|| <= rho"
+                ),
                 "outer": (
-                    "H(x) <= c implies Phi(x) < -(outer_margin + proof_margin) "
+                    "H(x) <= gamma implies Phi(x) < -(outer_margin + proof_margin) "
                     "on D outside the inner square"
                 ),
-                "boundary": "H(x) > c + proof_margin on every face of D",
+                "boundary": "H(x) >= gamma + proof_margin on every face of D",
                 "coverage": (
                     "the inner square is contained in B_rho; its four-rectangle "
                     "complement and the inner square cover the complete box D"

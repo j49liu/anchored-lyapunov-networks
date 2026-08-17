@@ -99,11 +99,11 @@
         "historical_local_preflight": "evidence/cubic_local_preflight.json",
         "historical_local_preflight_sha256": "7a6b517ce1a2fb78dffedc39d6254ccda5ba565bdce4e0cd7a761866bbcbfa08",
         "gpu_crown_proof": "evidence/cubic_gpu_crown.json",
-        "gpu_crown_proof_sha256": "6726231d9bcd610d85cf1eecb261fa7bf21479cba355a09fa7d7e4ea9e6d24ff",
+        "gpu_crown_proof_sha256": "f1297eb0bea63d8f0ff25bb88bd0c8d0b70b4a96bc4d0ed595dbfc83b7555d4c",
         "screen": "evidence/cubic_screen.json",
         "screen_sha256": "3a5ae1e99af7c4c3dda97af9e0f5ae1d6bc9ea7ff0d2d2b1044823e8539e2542",
         "standalone_proof": "evidence/cubic_standalone_proof.json",
-        "standalone_proof_sha256": "81984dbd29808efaaaa3a2519d504199283cca6ef94cd47734a97dd5191edc2a"
+        "standalone_proof_sha256": "f6f2bf2dac43e23158248d7f881955c06ff65ca0f36155761c6cb2f906b02c31"
       },
       "evidence_scope": "independent fixed-level screen and complete dReal certificate",
       "frozen_pytorch_artifact_sha256": "ff82153c8c6237502f7042919f1da03213f523d3657c51fe4241ebe5989d32be",
@@ -118,7 +118,7 @@
       "portable_weights_sha256": "7cec2fd5673de4fcec647b623fb9fd287c4459d8cc91a4ce3acb65181fe6b542",
       "pytorch_weights": "weights/cubic.pt",
       "pytorch_weights_sha256": "ff82153c8c6237502f7042919f1da03213f523d3657c51fe4241ebe5989d32be",
-      "retained_local_error_bound": 0.08341917337352575
+      "retained_local_error_bound": 0.08341580722434758
     },
     "grune10d": {
       "array_records": {
@@ -268,11 +268,11 @@
         },
         "evaluation": {
           "path": "evidence/grune10d_evaluation.json",
-          "sha256": "7aee5cdfc8101851f5a2a03ef1377fc97430347a054d10eac83087beb4452769"
+          "sha256": "94cd149195de7467fb45d84333bd6a1502cba07b341bad27e768c21cd93890e6"
         },
         "protocol": {
           "path": "evidence/grune10d_evaluation_protocol.json",
-          "sha256": "3f82ef75f0e8c237cdd5b0167a6a6d68567edd272a7a2ba3c621067b206339b7"
+          "sha256": "aa50a241f9cd290b887d4a33713979806d13a67e763494d9d25d7d93c4a37995"
         },
         "selection": {
           "path": "evidence/grune10d_frozen_selection.json",
@@ -399,11 +399,11 @@
         "historical_local_preflight": "evidence/two_machine_local_preflight.json",
         "historical_local_preflight_sha256": "dd7abf55953353155dd79f6a5c501e3e25083744fdc0152d93b034c3ae1ea6c1",
         "gpu_crown_proof": "evidence/two_machine_gpu_crown.json",
-        "gpu_crown_proof_sha256": "7506b128798ad5095c9c302a714286cf4874a444ac1625301dc83b7090506bdc",
+        "gpu_crown_proof_sha256": "183256181ffecb3e9ce3104e37c53fd768a26187068970d53224dd285b3a5ead",
         "screen": "evidence/two_machine_screen.json",
         "screen_sha256": "4fea04e5ad6c31e61d1f76004381d00a68dd09ee6f063c8d59dd377c368c677f",
         "standalone_proof": "evidence/two_machine_standalone_proof.json",
-        "standalone_proof_sha256": "32aff4e495d6208cd014b4cf19a3ce58ad1382ad8fcd1933b7e17268ced67cca"
+        "standalone_proof_sha256": "e66d840b17898af7d7c9cf9d2fdd883a56aaeccd6644055f382e9e55918740bc"
       },
       "evidence_scope": "independent fixed-level screen and complete dReal certificate",
       "frozen_pytorch_artifact_sha256": "c91d18180c20d913aafd50c3e057d1506841b7ea2b7bff0ba57f4d17b13bc45b",

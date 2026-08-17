@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Plot the three frozen candidates from their portable NumPy weights.
 
-The left column shows the exact reported sublevel boundary on a two-dimensional
-domain or coordinate slice.  The right column shows the corresponding bounded
-candidate ``W = tanh(H)`` as a surface.  No training checkpoint or training
-module is imported.
+The left column shows a conservative four-significant-digit rendering of the
+reported sublevel boundary on a two-dimensional domain or coordinate slice.
+The right column shows the corresponding bounded candidate ``W = tanh(H)`` as
+a surface.  No training checkpoint or training module is imported.
 
 For the 10D example, all coordinates except ``x1`` and ``x9`` are fixed
 to zero.  This is a visualization of a coordinate slice, not an invariant

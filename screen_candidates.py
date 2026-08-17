@@ -4,7 +4,8 @@
 The planar ``paper`` profile replays the independent fixed-level Sobol screen.
 The 10D profile replays the full-dimensional IID radial test and a sampled box
 boundary test.  Numerical screens are evidence, not formal certificates; use
-``verify_planar.py`` or ``verify_planar_crown.py`` for the planar proofs.
+``verify_planar.py`` for the planar proofs and ``verify_planar_crown.py`` for
+corroborating bound propagation.
 """
 
 from __future__ import annotations

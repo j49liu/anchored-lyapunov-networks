@@ -6,6 +6,7 @@ from __future__ import annotations
 import hashlib
 import json
 import math
+from fractions import Fraction
 from pathlib import Path
 
 import numpy as np
@@ -162,7 +163,18 @@ def validate_candidate(name: str, metadata: dict):
         assert replay["schema"] == "standalone-planar-dreal-proof-v1"
         assert replay["candidate"] == name
         assert replay["verified"] and replay["all_required_queries_unsat"]
+        assert replay["system_constants_encoded_exactly"]
+        assert replay["outer_query_phi_multiplier"] == (
+            1 if name == "two_machine" else 20
+        )
+        assert Fraction.from_float(replay["outer_query_scaled_margin"]) >= (
+            Fraction(replay["outer_query_phi_multiplier"])
+            * Fraction.from_float(metadata["outer_margin"])
+        )
         assert replay["local_bound"]["passed"]
+        assert replay["local_bound"]["beta"] == metadata[
+            "retained_local_error_bound"
+        ]
         assert replay["local_bound"]["beta"] < replay["local_bound"][
             "core_margin_eta"
         ]
@@ -211,6 +223,11 @@ def validate_candidate(name: str, metadata: dict):
                 "6b8bbcfac1c01da1cabd240a87e4dce1a65f5a2b"
             )
             assert gpu["method"]["bound_method"] == "CROWN"
+            assert gpu["method"]["dtype"] == "float32"
+            assert gpu["method"]["trust_scope"] == (
+                "float32 backend without a proved roundoff envelope; "
+                "corroborating evidence rather than a real-arithmetic formal certificate"
+            )
             assert gpu["method"]["complete_verifier"] == (
                 "exhaustive adaptive input subdivision"
             )
