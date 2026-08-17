@@ -364,14 +364,6 @@ def render(
             spec,
         )
 
-    figure.suptitle(
-        "Level sets and learned Lyapunov functions",
-        x=0.49,
-        y=0.985,
-        fontsize=18.0,
-        fontweight="bold",
-        color=TEXT,
-    )
     colorbar_axis = figure.add_axes((0.93, 0.20, 0.016, 0.60))
     figure.colorbar(surface, cax=colorbar_axis)
 
@@ -383,7 +375,6 @@ def render(
         dpi=300,
         facecolor="white",
         metadata={
-            "Title": "Level sets and learned Lyapunov functions",
             "Author": "LYZNet",
             "Creator": Path(__file__).name,
             "CreationDate": None,
@@ -395,7 +386,6 @@ def render(
         dpi=240,
         facecolor="white",
         metadata={
-            "Title": "Level sets and learned Lyapunov functions",
             "Author": "LYZNet",
             "Software": Path(__file__).name,
         },
